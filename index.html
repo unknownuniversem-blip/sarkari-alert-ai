@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <title>Sarkari Alert AI - Latest Govt Jobs, Admit Card, Results & Notifications</title>
-  <meta name="description" content="Sarkari Alert AI: Autopilot government job notification engine. Direct official apply links, admit cards, results, dates, and syllabus.">
+  <title>SARKARI ALERT AI | Verified Govt Jobs, Admit Card & Results</title>
+  <meta name="description" content="Cross-verified Sarkari notifications, admit cards, and results. Zero redirect loops, direct official apply links.">
 
   <!-- Privacy Analytics -->
   <script data-goatcounter="https://quicktools.goatcounter.com/count"
@@ -27,7 +27,6 @@
     * { box-sizing: border-box; margin: 0; padding: 0; font-family: Arial, Helvetica, sans-serif; }
     body { background-color: #ffffff; color: #000000; line-height: 1.45; }
 
-    /* UTILITY ECOSYSTEM BAR */
     .net-bar {
       background: #0f172a;
       color: #94a3b8;
@@ -40,7 +39,6 @@
     }
     .net-bar a { color: #38bdf8; text-decoration: none; font-weight: bold; margin-left: 6px; }
 
-    /* MAIN HEADER */
     .sr-header {
       background: var(--sr-red);
       color: #ffffff;
@@ -61,7 +59,6 @@
       opacity: 0.95;
     }
 
-    /* NAVIGATION BAR */
     .sr-nav {
       background: var(--sr-nav-bg);
       display: flex;
@@ -90,10 +87,7 @@
       background: #fff;
     }
 
-    .wa-btn-wrap {
-      text-align: center;
-      margin: 6px 0;
-    }
+    .wa-btn-wrap { text-align: center; margin: 6px 0; }
     .btn-whatsapp {
       background: #00a859;
       color: #fff;
@@ -144,7 +138,6 @@
     .mq-purple { background: #9d0208; }
     .mq-darkred { background: #6a040f; }
 
-    /* CONTENT GRID */
     .content-container {
       max-width: 1060px;
       margin: 12px auto;
@@ -202,10 +195,7 @@
     }
     .sr-links-list a:hover { text-decoration: underline; color: #cc0000; }
 
-    .view-more-wrap {
-      text-align: center;
-      padding: 6px 0 8px;
-    }
+    .view-more-wrap { text-align: center; padding: 6px 0 8px; }
     .btn-view-more {
       background: var(--sr-btn-blue);
       color: #fff;
@@ -369,24 +359,21 @@
 </head>
 <body>
 
-  <!-- UTILITY ECOSYSTEM BAR -->
   <div class="net-bar">
     <div>⚡ QuickTools India Ecosystem</div>
     <div>
-      <a href="https://unknownuniversem-blip.github.io/hindi-typing-tutor/">⌨️️ Hindi Typing Tutor</a> |
+      <a href="https://unknownuniversem-blip.github.io/hindi-typing-tutor/">⌨ Hindi Typing Tutor</a> |
       <a href="https://unknownuniversem-blip.github.io/typer-racer-world/">🏎️ NitroTypers</a> |
       <a href="https://unknownuniversem-blip.github.io/exam-resizer/">📷 20KB/50KB Resizer</a> |
       <a href="https://unknownuniversem-blip.github.io/">🏠 Hub</a>
     </div>
   </div>
 
-  <!-- OWN BRANDED SARKARI ALERT AI HEADER -->
   <header class="sr-header">
     <h1>SARKARI ALERT AI™</h1>
-    <h2>SarkariAlert.AI — Autopilot Govt Recruitment Portal</h2>
+    <h2>SarkariAlert.AI — Cross-Verified Recruitment Portal</h2>
   </header>
 
-  <!-- NAVIGATION BAR -->
   <nav class="sr-nav">
     <a href="#" onclick="showHome()">Home</a>
     <a href="#secJobs" onclick="showHome()">Latest Job</a>
@@ -397,10 +384,9 @@
     <a href="#secAnswer" onclick="showHome()">Answer Key</a>
   </nav>
 
-  <!-- HOME PAGE VIEW -->
   <div id="homeMainView">
     <div class="top-notice-bar">
-      <b>Sarkari Alert AI™ Automated Portal</b> – Real-time auto-fetched Government Jobs, Admit Cards, Exam Results, Answer Keys, and Official Notifications.
+      <b>Sarkari Alert AI™ Verified Portal</b> – Auto-cross-verified Government Jobs, Admit Cards, Exam Results, Answer Keys, and Direct Official Application Links.
     </div>
 
     <div class="wa-btn-wrap">
@@ -409,38 +395,34 @@
 
     <div class="tools-title">Sarkari Alert AI Tools</div>
 
-    <!-- COLORFUL MARQUEE BOXES -->
     <div class="marquee-grid" id="marqueeGrid">
-      <a onclick="openFirstInCat('jobs')" class="mq-card mq-red">Latest Govt Job Online Forms</a>
-      <a onclick="openFirstInCat('admit')" class="mq-card mq-orange">Latest Exam City & Admit Cards</a>
-      <a onclick="openFirstInCat('results')" class="mq-card mq-purple">Declared Exam Results & Marks</a>
-      <a onclick="openFirstInCat('answerkey')" class="mq-card mq-darkred">Provisional Answer Keys & Solutions</a>
+      <a onclick="openFirstInCat('jobs')" class="mq-card mq-red">Latest Verified Job Forms</a>
+      <a onclick="openFirstInCat('admit')" class="mq-card mq-orange">Exam City & Admit Cards</a>
+      <a onclick="openFirstInCat('results')" class="mq-card mq-purple">Official Results & Merit Lists</a>
+      <a onclick="openFirstInCat('answerkey')" class="mq-card mq-darkred">Provisional Answer Keys</a>
     </div>
 
-    <!-- MAIN 3-COLUMN ROWS -->
     <div class="content-container">
-      <!-- ROW 1: RESULTS | ADMIT CARD | LATEST JOBS -->
       <div class="sec-row">
         <div class="sr-box" id="secResults">
           <div class="sr-box-title">Results</div>
-          <ul class="sr-links-list" id="list_results"><li>Loading latest results...</li></ul>
+          <ul class="sr-links-list" id="list_results"><li>Loading verified results...</li></ul>
           <div class="view-more-wrap"><a href="#secResults" class="btn-view-more">View More</a></div>
         </div>
 
         <div class="sr-box" id="secAdmit">
           <div class="sr-box-title">Admit Card</div>
-          <ul class="sr-links-list" id="list_admit"><li>Loading latest admit cards...</li></ul>
+          <ul class="sr-links-list" id="list_admit"><li>Loading verified admit cards...</li></ul>
           <div class="view-more-wrap"><a href="#secAdmit" class="btn-view-more">View More</a></div>
         </div>
 
         <div class="sr-box" id="secJobs">
           <div class="sr-box-title">Latest Jobs</div>
-          <ul class="sr-links-list" id="list_jobs"><li>Loading latest jobs...</li></ul>
+          <ul class="sr-links-list" id="list_jobs"><li>Loading verified jobs...</li></ul>
           <div class="view-more-wrap"><a href="#secJobs" class="btn-view-more">View More</a></div>
         </div>
       </div>
 
-      <!-- ROW 2: ANSWER KEY | DOCUMENTS | ADMISSION -->
       <div class="sec-row">
         <div class="sr-box" id="secAnswer">
           <div class="sr-box-title">Answer Key</div>
@@ -451,10 +433,10 @@
         <div class="sr-box" id="secDocuments">
           <div class="sr-box-title">Documents & Verification</div>
           <ul class="sr-links-list">
-            <li><a href="https://edistrict.up.gov.in" target="_blank">UP Domicile (निवास), Caste (जाति) & Income (आय) Certificate</a></li>
-            <li><a href="https://uidai.gov.in" target="_blank">Aadhaar Card Download, Correction & PVC Order</a></li>
-            <li><a href="https://incometax.gov.in" target="_blank">PAN Card Registration, Correction & Aadhaar Link</a></li>
-            <li><a href="https://voters.eci.gov.in" target="_blank">Voter ID Card Online Apply & Electoral Search</a></li>
+            <li><a href="https://edistrict.up.gov.in" target="_blank" rel="noopener noreferrer">UP Domicile (निवास), Caste (जाति) & Income (आय) Certificate</a></li>
+            <li><a href="https://uidai.gov.in" target="_blank" rel="noopener noreferrer">Aadhaar Card Download, Correction & PVC Order</a></li>
+            <li><a href="https://incometax.gov.in" target="_blank" rel="noopener noreferrer">PAN Card Registration, Correction & Aadhaar Link</a></li>
+            <li><a href="https://voters.eci.gov.in" target="_blank" rel="noopener noreferrer">Voter ID Card Online Apply & Electoral Search</a></li>
           </ul>
           <div class="view-more-wrap"><a href="#" class="btn-view-more">View More</a></div>
         </div>
@@ -462,50 +444,17 @@
         <div class="sr-box" id="secAdmission">
           <div class="sr-box-title">Admission & Entrance</div>
           <ul class="sr-links-list" id="list_admission">
-            <li><a href="https://neet.nta.nic.in" target="_blank">NTA NEET UG Online Form 2026</a></li>
-            <li><a href="https://cuet.nta.nic.in" target="_blank">CUET UG Central University Admission Form</a></li>
-            <li><a href="https://jeecup.admissions.nic.in" target="_blank">UP Polytechnic JEECUP Online Form</a></li>
+            <li><a href="https://neet.nta.nic.in" target="_blank" rel="noopener noreferrer">NTA NEET UG Online Form 2026</a></li>
+            <li><a href="https://cuet.nta.nic.in" target="_blank" rel="noopener noreferrer">CUET UG Central University Admission Form</a></li>
+            <li><a href="https://jeecup.admissions.nic.in" target="_blank" rel="noopener noreferrer">UP Polytechnic JEECUP Online Form</a></li>
           </ul>
           <div class="view-more-wrap"><a href="#secAdmission" class="btn-view-more">View More</a></div>
-        </div>
-      </div>
-
-      <!-- ROW 3: 10TH/ITI JOBS | OUTSOURCING JOBS | SYLLABUS -->
-      <div class="sec-row">
-        <div class="sr-box">
-          <div class="sr-box-title">10th / ITI Pass Jobs</div>
-          <ul class="sr-links-list">
-            <li><a onclick="openFirstInCat('jobs')">Railway RRC Trade Apprentice Vacancy 2026</a></li>
-            <li><a onclick="openFirstInCat('jobs')">SSC Multi-Tasking Staff (MTS) & Havaldar Form</a></li>
-            <li><a onclick="openFirstInCat('jobs')">State Police Constable Matric/Intermediate Form</a></li>
-          </ul>
-          <div class="view-more-wrap"><a href="#" class="btn-view-more">View More</a></div>
-        </div>
-
-        <div class="sr-box">
-          <div class="sr-box-title">Outsourcing & State Jobs</div>
-          <ul class="sr-links-list">
-            <li><a href="https://sewayojan.up.nic.in" target="_blank">UP Sewayojan Block Data Entry Operator</a></li>
-            <li><a href="https://sewayojan.up.nic.in" target="_blank">UP Basic Shiksha Vibhag Computer Assistant</a></li>
-            <li><a href="https://sewayojan.up.nic.in" target="_blank">Health Mission NHM Community Staff Nurse Vacancy</a></li>
-          </ul>
-          <div class="view-more-wrap"><a href="#" class="btn-view-more">View More</a></div>
-        </div>
-
-        <div class="sr-box" id="secSyllabus">
-          <div class="sr-box-title">Syllabus & Pattern</div>
-          <ul class="sr-links-list" id="list_syllabus">
-            <li><a onclick="openFirstInCat('jobs')">SSC CGL Tier 1 & Tier 2 Detailed Syllabus</a></li>
-            <li><a onclick="openFirstInCat('jobs')">Railway NTPC CBT-1 & CBT-2 Exam Pattern</a></li>
-            <li><a onclick="openFirstInCat('jobs')">High Court Steno & Typing Speed Criteria</a></li>
-          </ul>
-          <div class="view-more-wrap"><a href="#secSyllabus" class="btn-view-more">View More</a></div>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- POST DETAILS VIEW (AUTO GENERATED FROM SCRAPED NOTIFICATIONS) -->
+  <!-- DEDICATED POST VIEW -->
   <div id="postDetailsView">
     <button class="btn-back-home" onclick="showHome()">← Back to Sarkari Alert AI Home</button>
 
@@ -544,46 +493,46 @@
     </table>
 
     <div class="steps-box">
-      <div class="steps-head">How To Apply & Download Official Notification</div>
+      <div class="steps-head">How To Apply & Verify Official Notification</div>
       <div class="steps-body">
-        • Click the direct link below to visit the official conducting board portal.<br>
+        • Click the verified official link below to visit the recruitment portal.<br>
         • Download the official notification PDF and verify eligibility criteria.<br>
         • Complete the registration / login form and upload required documents.<br>
-        • Submit the application before the closing deadline and keep a printed copy.
+        • Submit before the closing date and keep a printed copy for future reference.
       </div>
     </div>
 
     <table class="links-table">
       <tr>
-        <th colspan="2">USEFUL IMPORTANT DIRECT LINKS</th>
+        <th colspan="2">USEFUL VERIFIED OFFICIAL DIRECT LINKS</th>
       </tr>
       <tr>
-        <td style="width:60%;">Direct Official Link / Registration</td>
-        <td style="width:40%; text-align:center;"><a id="pApplyLink" href="#" target="_blank">Click Here</a></td>
+        <td style="width:60%;">Direct Official Apply / Verification Link</td>
+        <td style="width:40%; text-align:center;"><a id="pApplyLink" href="#" target="_blank" rel="noopener noreferrer">Click Here</a></td>
       </tr>
       <tr>
-        <td>Download Official Notification PDF</td>
-        <td style="text-align:center;"><a id="pNoticeLink" href="#" target="_blank">Click Here</a></td>
+        <td>Download Official Notification / Board Portal</td>
+        <td style="text-align:center;"><a id="pNoticeLink" href="#" target="_blank" rel="noopener noreferrer">Click Here</a></td>
       </tr>
       <tr>
         <td>Conducting Board Official Website</td>
-        <td style="text-align:center;"><a id="pOfficialLink" href="#" target="_blank">Click Here</a></td>
+        <td style="text-align:center;"><a id="pOfficialLink" href="#" target="_blank" rel="noopener noreferrer">Click Here</a></td>
       </tr>
       <tr style="background:#e0f2fe;">
         <td style="color:#0369a1;">📷 Need Photo / Signature Resizer for Govt Forms?</td>
-        <td style="text-align:center;"><a href="https://unknownuniversem-blip.github.io/exam-resizer/" target="_blank" style="color:#0369a1;">Resize (20KB - 50KB)</a></td>
+        <td style="text-align:center;"><a href="https://unknownuniversem-blip.github.io/exam-resizer/" target="_blank" rel="noopener noreferrer" style="color:#0369a1;">Resize (20KB - 50KB)</a></td>
       </tr>
       <tr style="background:#e0f2fe;">
         <td style="color:#0369a1;">⌨️ Practice Free Mangal / Kruti Dev Typing Test</td>
-        <td style="text-align:center;"><a href="https://unknownuniversem-blip.github.io/hindi-typing-tutor/" target="_blank" style="color:#0369a1;">Practice Typing Free</a></td>
+        <td style="text-align:center;"><a href="https://unknownuniversem-blip.github.io/hindi-typing-tutor/" target="_blank" rel="noopener noreferrer" style="color:#0369a1;">Practice Typing Free</a></td>
       </tr>
     </table>
   </div>
 
   <footer class="sr-footer">
-    <p><b>Sarkari Alert AI™ – SarkariAlert.AI | Autopilot Recruitment Engine</b></p>
+    <p><b>Sarkari Alert AI™ – SarkariAlert.AI | Verified Recruitment Engine</b></p>
     <p style="font-size:10px; color:#666; margin-top:4px;">
-      Disclaimer: All notifications and links are aggregated directly from official gazettes and conducting board announcements for informational access.
+      Disclaimer: Links point directly to verified official recruitment boards and official gazettes without redirect intermediaries.
     </p>
   </footer>
 
@@ -601,7 +550,7 @@
           populateSection('list_answerkey', database.answerkey, 'answerkey');
         })
         .catch(() => {
-          console.warn('data.json not loaded yet.');
+          console.warn('data.json awaiting initial fetch.');
         });
     });
 
@@ -634,10 +583,13 @@
       document.getElementById('pTotalPostCol').innerText = item.total_posts || 'Open';
 
       const links = item.links || {};
-      const directUrl = links.apply || links.notice || links.official || '#';
-      document.getElementById('pApplyLink').href = directUrl;
-      document.getElementById('pNoticeLink').href = links.notice || directUrl;
-      document.getElementById('pOfficialLink').href = links.official || directUrl;
+      const directApply = links.apply || '#';
+      const directNotice = links.notice || directApply;
+      const directOfficial = links.official || directApply;
+
+      document.getElementById('pApplyLink').href = directApply;
+      document.getElementById('pNoticeLink').href = directNotice;
+      document.getElementById('pOfficialLink').href = directOfficial;
 
       document.getElementById('homeMainView').style.display = 'none';
       document.getElementById('postDetailsView').style.display = 'block';
