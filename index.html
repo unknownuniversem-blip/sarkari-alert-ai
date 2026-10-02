@@ -521,10 +521,11 @@
     <div class="nav-inner">
       <a onclick="showHome()">Home</a>
       <a href="#secJobs" onclick="showHome()">Latest Jobs</a>
+      <a onclick="filterByOrg('Banking')">🏦 Banking Jobs</a>
       <a href="#secAdmit" onclick="showHome()">Admit Cards</a>
       <a href="#secResults" onclick="showHome()">Results</a>
+      <a href="#secAdmission" onclick="showHome()">🎓 University Admissions</a>
       <a href="#secAnswer" onclick="showHome()">Answer Keys</a>
-      <a href="#secAdmission" onclick="showHome()">Admissions</a>
       <a href="#secDocuments" onclick="showHome()">Certificates</a>
     </div>
   </nav>
@@ -774,6 +775,13 @@
       populateSection('list_admit', database.admit, 'admit', q);
       populateSection('list_results', database.results, 'results', q);
       populateSection('list_answerkey', database.answerkey, 'answerkey', q);
+    }
+
+        function filterByOrg(orgQuery) {
+      showHome();
+      document.getElementById('searchBox').value = orgQuery;
+      filterAll();
+      window.scrollTo({ top: 320, behavior: 'smooth' });
     }
 
     function filterAll() {
