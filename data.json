@@ -1,41 +1,216 @@
 {
   "jobs": [
-    { "title": "SSC CGL Recruitment 2026 - Online Form for 14,500+ Posts", "org": "SSC", "date": "Oct 2026", "link": "https://ssc.gov.in" },
-    { "title": "Allahabad High Court RO / ARO & Computer Assistant 2026", "org": "AHC", "date": "Oct 2026", "link": "https://allahabadhighcourt.in" },
-    { "title": "UP Police Sub Inspector SI & Constable Online Form", "org": "UPPRPB", "date": "Oct 2026", "link": "https://uppbpb.gov.in" },
-    { "title": "Railway RRB NTPC Graduate Level Vacancy 2026", "org": "RRB", "date": "Sep 2026", "link": "https://rrbapply.gov.in" },
-    { "title": "IBPS PO / Specialist Officer SO Recruitment 2026", "org": "IBPS", "date": "Sep 2026", "link": "https://ibps.in" }
+    {
+      "id": "ssc-cgl-2026",
+      "title": "SSC CGL Recruitment 2026 - Online Form for 14,500+ Posts",
+      "org": "SSC",
+      "date": "Oct 2026",
+      "post_name": "Combined Graduate Level Examination (CGL 2026)",
+      "total_posts": "14,582 Posts (Tentative)",
+      "important_dates": {
+        "apply_start": "02/10/2026",
+        "apply_end": "31/10/2026",
+        "fee_last_date": "01/11/2026",
+        "exam_date": "Dec 2026",
+        "admit_card": "Dec 2026"
+      },
+      "fee": {
+        "gen_obc": "₹ 100/-",
+        "sc_st": "₹ 0/- (Exempted)",
+        "female": "₹ 0/- (All Category)",
+        "payment_mode": "Online via Net Banking, Debit Card, UPI"
+      },
+      "age_limit": {
+        "min": "18 Years",
+        "max": "27-32 Years (Post Wise)",
+        "as_on": "01/08/2026"
+      },
+      "eligibility": "Bachelor's Degree in Any Stream from a Recognized University in India. Post-wise typing/computer test applicable.",
+      "links": {
+        "apply_online": "https://ssc.gov.in",
+        "download_admit": "https://ssc.gov.in",
+        "download_notice": "https://ssc.gov.in",
+        "download_syllabus": "https://ssc.gov.in",
+        "official_site": "https://ssc.gov.in"
+      }
+    },
+    {
+      "id": "ahc-ro-aro-2026",
+      "title": "Allahabad High Court RO / ARO & Computer Assistant 2026",
+      "org": "AHC",
+      "date": "Oct 2026",
+      "post_name": "Review Officer (RO) & Assistant Review Officer (ARO)",
+      "total_posts": "428 Posts",
+      "important_dates": {
+        "apply_start": "28/09/2026",
+        "apply_end": "25/10/2026",
+        "fee_last_date": "26/10/2026",
+        "exam_date": "Nov 2026",
+        "admit_card": "Nov 2026"
+      },
+      "fee": {
+        "gen_obc": "₹ 800/-",
+        "sc_st": "₹ 600/- (UP Domicile)",
+        "female": "As per category",
+        "payment_mode": "Online Payment Gateway"
+      },
+      "age_limit": {
+        "min": "21 Years",
+        "max": "35 Years",
+        "as_on": "01/07/2026"
+      },
+      "eligibility": "Bachelor Degree in Any Stream + Computer Diploma (CCC / O Level) + English/Hindi Typing Speed 25-30 WPM.",
+      "links": {
+        "apply_online": "https://allahabadhighcourt.in",
+        "download_admit": "https://allahabadhighcourt.in",
+        "download_notice": "https://allahabadhighcourt.in",
+        "download_syllabus": "https://allahabadhighcourt.in",
+        "official_site": "https://allahabadhighcourt.in"
+      }
+    },
+    {
+      "id": "upp-si-constable-2026",
+      "title": "UP Police Sub Inspector SI & Constable Online Form 2026",
+      "org": "UPPRPB",
+      "date": "Oct 2026",
+      "post_name": "Sub Inspector Civil Police & Platoon Commander",
+      "total_posts": "3,820 Posts",
+      "important_dates": {
+        "apply_start": "15/10/2026",
+        "apply_end": "14/11/2026",
+        "fee_last_date": "15/11/2026",
+        "exam_date": "Jan 2027",
+        "admit_card": "Jan 2027"
+      },
+      "fee": {
+        "gen_obc": "₹ 400/-",
+        "sc_st": "₹ 400/-",
+        "female": "₹ 400/-",
+        "payment_mode": "E-Challan or Debit/Credit Card"
+      },
+      "age_limit": {
+        "min": "21 Years",
+        "max": "28 Years",
+        "as_on": "01/07/2026"
+      },
+      "eligibility": "Bachelor Degree in Any Discipline from any recognized university in India. Physical standard criteria applicable.",
+      "links": {
+        "apply_online": "https://uppbpb.gov.in",
+        "download_admit": "https://uppbpb.gov.in",
+        "download_notice": "https://uppbpb.gov.in",
+        "download_syllabus": "https://uppbpb.gov.in",
+        "official_site": "https://uppbpb.gov.in"
+      }
+    }
   ],
   "admit": [
-    { "title": "SSC CHSL Tier II Typing & Skill Test Admit Card 2026", "org": "SSC", "date": "Oct 2026", "link": "https://ssc.gov.in" },
-    { "title": "UPSC Civil Services Prelims Hall Ticket Download", "org": "UPSC", "date": "Oct 2026", "link": "https://upsc.gov.in" },
-    { "title": "UPSSSC Lekhpal Examination Call Letter 2026", "org": "UPSSSC", "date": "Oct 2026", "link": "https://upsssc.gov.in" },
-    { "title": "NTA UGC NET December Exam City Slip 2026", "org": "NTA", "date": "Oct 2026", "link": "https://ugcnet.nta.ac.in" }
+    {
+      "id": "ssc-chsl-tier2-admit-2026",
+      "title": "SSC CHSL Tier II Typing & Skill Test Admit Card 2026",
+      "org": "SSC",
+      "date": "Oct 2026",
+      "post_name": "Combined Higher Secondary Level (10+2) Examination 2026",
+      "total_posts": "3,712 Posts",
+      "important_dates": {
+        "apply_start": "Completed",
+        "apply_end": "Completed",
+        "fee_last_date": "Completed",
+        "exam_date": "18/10/2026 to 22/10/2026",
+        "admit_card": "Available Now"
+      },
+      "fee": {
+        "gen_obc": "₹ 100/-",
+        "sc_st": "₹ 0/-",
+        "female": "₹ 0/-",
+        "payment_mode": "Exempted for Admit Download"
+      },
+      "age_limit": {
+        "min": "18 Years",
+        "max": "27 Years",
+        "as_on": "01/01/2026"
+      },
+      "eligibility": "10+2 Intermediate Exam Passed. Tier 2 Typing Speed: 35 WPM English or 30 WPM Hindi.",
+      "links": {
+        "apply_online": "https://ssc.gov.in",
+        "download_admit": "https://ssc.gov.in",
+        "download_notice": "https://ssc.gov.in",
+        "download_syllabus": "https://ssc.gov.in",
+        "official_site": "https://ssc.gov.in"
+      }
+    },
+    {
+      "id": "upsc-cse-pre-admit-2026",
+      "title": "UPSC Civil Services Prelims Hall Ticket Download",
+      "org": "UPSC",
+      "date": "Oct 2026",
+      "post_name": "Civil Services (Preliminary) Examination 2026",
+      "total_posts": "1,056 Posts",
+      "important_dates": {
+        "apply_start": "Completed",
+        "apply_end": "Completed",
+        "fee_last_date": "Completed",
+        "exam_date": "25/10/2026",
+        "admit_card": "Available Now"
+      },
+      "fee": {
+        "gen_obc": "₹ 100/-",
+        "sc_st": "₹ 0/-",
+        "female": "₹ 0/-",
+        "payment_mode": "Download Hall Ticket Free"
+      },
+      "age_limit": {
+        "min": "21 Years",
+        "max": "32 Years",
+        "as_on": "01/08/2026"
+      },
+      "eligibility": "Bachelor's Degree in Any Stream from a Recognized University.",
+      "links": {
+        "apply_online": "https://upsc.gov.in",
+        "download_admit": "https://upsc.gov.in",
+        "download_notice": "https://upsc.gov.in",
+        "download_syllabus": "https://upsc.gov.in",
+        "official_site": "https://upsc.gov.in"
+      }
+    }
   ],
   "results": [
-    { "title": "SSC CGL Final Marks & Cutoff List 2026 Declared", "org": "SSC", "date": "Oct 2026", "link": "https://ssc.gov.in" },
-    { "title": "UP Police Constable Written Exam Result & Merit PDF", "org": "UPPRPB", "date": "Oct 2026", "link": "https://uppbpb.gov.in" },
-    { "title": "IBPS Clerk Mains Exam Scorecard 2026", "org": "IBPS", "date": "Oct 2026", "link": "https://ibps.in" },
-    { "title": "Bihar BPSC Teacher TRE 4.0 Final Result & District Allocation", "org": "BPSC", "date": "Sep 2026", "link": "https://bpsc.bih.nic.in" }
+    {
+      "id": "ssc-cgl-final-result-2026",
+      "title": "SSC CGL Final Marks & Cutoff List 2026 Declared",
+      "org": "SSC",
+      "date": "Oct 2026",
+      "post_name": "Combined Graduate Level 2025-2026 Final Merit List",
+      "total_posts": "8,415 Posts",
+      "important_dates": {
+        "apply_start": "Completed",
+        "apply_end": "Completed",
+        "fee_last_date": "Completed",
+        "exam_date": "Tier 1 & Tier 2 Over",
+        "admit_card": "Final Results Released (Oct 2026)"
+      },
+      "fee": {
+        "gen_obc": "Nil",
+        "sc_st": "Nil",
+        "female": "Nil",
+        "payment_mode": "Result PDF Download"
+      },
+      "age_limit": {
+        "min": "18 Years",
+        "max": "32 Years",
+        "as_on": "01/08/2025"
+      },
+      "eligibility": "Candidates appeared in CGL Tier 1 and Tier 2 Exams.",
+      "links": {
+        "apply_online": "https://ssc.gov.in",
+        "download_admit": "https://ssc.gov.in",
+        "download_notice": "https://ssc.gov.in",
+        "download_syllabus": "https://ssc.gov.in",
+        "official_site": "https://ssc.gov.in"
+      }
+    }
   ],
-  "answerkey": [
-    { "title": "SSC CPO Sub Inspector Paper I Provisional Answer Key", "org": "SSC", "date": "Oct 2026", "link": "https://ssc.gov.in" },
-    { "title": "UP Police SI Exam Question Paper & Key Challenge", "org": "UPPRPB", "date": "Oct 2026", "link": "https://uppbpb.gov.in" },
-    { "title": "Railway RRB Technician Grade I & III Answer Key", "org": "RRB", "date": "Sep 2026", "link": "https://rrbapply.gov.in" }
-  ],
-  "syllabus": [
-    { "title": "Allahabad High Court RO/ARO New Exam Pattern & Steno Criteria", "org": "AHC", "date": "2026", "link": "https://allahabadhighcourt.in" },
-    { "title": "SSC CGL Tier 1 & Tier 2 Detailed Syllabus & Negative Marking", "org": "SSC", "date": "2026", "link": "https://ssc.gov.in" },
-    { "title": "UP Police Computer Operator & Clerk Typing Syllabus 2026", "org": "UPPRPB", "date": "2026", "link": "https://uppbpb.gov.in" }
-  ],
-  "admission": [
-    { "title": "NTA NEET UG 2026 Online Application & Information Bulletin", "org": "NTA", "date": "2026", "link": "https://neet.nta.nic.in" },
-    { "title": "CUET UG / PG Central University Admission Registration", "org": "NTA", "date": "2026", "link": "https://cuet.nta.nic.in" },
-    { "title": "UP B.Ed Joint Entrance Examination JEE Counseling Schedule", "org": "BU", "date": "2026", "link": "https://bujhansi.ac.in" }
-  ],
-  "certificate": [
-    { "title": "UP E-Sathi: Online Domicile (निवास), Caste (जाति) & Income (आय)", "org": "UP Govt", "date": "Direct", "link": "https://edistrict.up.gov.in" },
-    { "title": "Aadhaar Card: Check Status, Download e-Aadhaar & PVC Order", "org": "UIDAI", "date": "Direct", "link": "https://uidai.gov.in" },
-    { "title": "PAN Card Online: Instant e-PAN via Aadhaar Number (Free)", "org": "IT Dept", "date": "Direct", "link": "https://incometax.gov.in" }
-  ]
+  "answerkey": [],
+  "syllabus": [],
+  "admission": [],
+  "certificate": []
 }

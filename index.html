@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <title>Sarkari Alert AI - Latest Govt Jobs, Results, Admit Card, Answer Key & Syllabus</title>
-  <meta name="description" content="All-in-one Sarkari recruitment directory: Latest Jobs, Admit Card, Results, Answer Key, Syllabus, Admission, and Verification portals.">
+  <title>Sarkari Alert AI - Latest Govt Jobs, Results, Admit Card & Exam Details</title>
+  <meta name="description" content="All-in-one Sarkari recruitment directory: Latest Jobs, Admit Card, Results, Dates, Fees, Eligibility, Direct Apply, and Syllabus download.">
 
   <!-- Privacy Analytics -->
   <script data-goatcounter="https://quicktools.goatcounter.com/count"
@@ -57,7 +57,7 @@
     .brand-title { font-size: clamp(1.8rem, 4.5vw, 2.6rem); font-weight: 900; letter-spacing: -0.02em; }
     .tagline { font-size: 0.85rem; opacity: 0.92; margin-top: 2px; }
 
-    /* COLOR-CODED HOT TILES (EXACT ROJGAR/SARKARI RESULT TOP TILES) */
+    /* HOT TILES */
     .hot-tiles-grid {
       max-width: 1120px;
       margin: 12px auto;
@@ -105,7 +105,7 @@
     }
     .search-box:focus { border-color: var(--primary); }
 
-    /* CORE 3-COLUMN UPPER GRID */
+    /* 3-COLUMN CORE GRID */
     .tier-section {
       max-width: 1120px;
       margin: 12px auto;
@@ -116,19 +116,6 @@
     }
     @media (max-width: 860px) { .tier-section { grid-template-columns: 1fr; } }
 
-    /* LOWER 4-COLUMN SECONDARY GRID */
-    .tier-lower {
-      max-width: 1120px;
-      margin: 14px auto;
-      padding: 0 10px;
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 12px;
-    }
-    @media (max-width: 900px) { .tier-lower { grid-template-columns: repeat(2, 1fr); } }
-    @media (max-width: 540px) { .tier-lower { grid-template-columns: 1fr; } }
-
-    /* CARD CONTAINERS */
     .box-card {
       background: var(--card-bg);
       border: 1.5px solid var(--border);
@@ -146,21 +133,16 @@
       text-align: center;
       letter-spacing: 0.02em;
     }
-
-    /* HEADER THEMES */
     .bg-jobs { background: var(--primary); }
     .bg-admit { background: var(--blue); }
     .bg-results { background: var(--green); }
-    .bg-answer { background: var(--orange); }
-    .bg-syllabus { background: var(--purple); }
-    .bg-admission { background: var(--teal); }
-    .bg-cert { background: #4338ca; }
 
-    .items-list { list-style: none; max-height: 480px; overflow-y: auto; flex: 1; }
+    .items-list { list-style: none; max-height: 520px; overflow-y: auto; flex: 1; }
     .item-row {
       padding: 10px 12px;
       border-bottom: 1px solid var(--border);
       transition: background 0.1s ease;
+      cursor: pointer;
     }
     .item-row:last-child { border-bottom: none; }
     .item-row:hover { background: #f1f5f9; }
@@ -169,7 +151,6 @@
       font-size: 0.88rem;
       font-weight: 700;
       color: var(--text);
-      text-decoration: none;
       display: block;
       line-height: 1.4;
     }
@@ -191,50 +172,147 @@
       font-weight: 800;
     }
 
-    /* INTEGRATED QUICKTOOLS EXAM UTILITIES */
-    .utilities-grid {
-      max-width: 1120px;
-      margin: 16px auto;
-      padding: 0 10px;
+    /* FULLPAGE EXAM DETAILS MODAL (SARKARI RESULT POST FORMAT) */
+    .details-modal {
+      position: fixed;
+      inset: 0;
+      background: rgba(15, 23, 42, 0.7);
+      backdrop-filter: blur(4px);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+      padding: 14px;
+      overflow-y: auto;
     }
-    .utilities-card {
-      background: #0f172a;
-      color: #fff;
+    .details-modal.active { display: flex; }
+
+    .details-container {
+      background: #fff;
       border-radius: 12px;
-      padding: 16px;
-      border: 1px solid #1e293b;
+      max-width: 860px;
+      width: 100%;
+      max-height: 92vh;
+      overflow-y: auto;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+      position: relative;
+      border: 2px solid var(--border);
     }
-    .util-header {
+
+    .modal-close-btn {
+      position: sticky;
+      top: 10px;
+      float: right;
+      margin-right: 12px;
+      margin-top: 10px;
+      background: #ef4444;
+      color: #fff;
+      border: none;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
       font-size: 1.1rem;
-      font-weight: 800;
-      color: #f59e0b;
-      margin-bottom: 10px;
+      font-weight: 900;
+      cursor: pointer;
       display: flex;
       align-items: center;
-      gap: 6px;
+      justify-content: center;
+      z-index: 10;
     }
-    .util-buttons {
+
+    .details-body { padding: 20px 24px 28px; }
+
+    .post-header-box {
+      border-bottom: 2px solid var(--border);
+      padding-bottom: 12px;
+      margin-bottom: 16px;
+    }
+    .post-title-main { font-size: 1.35rem; font-weight: 900; color: var(--primary); line-height: 1.35; }
+    .post-sub-meta { font-size: 0.8rem; color: var(--text-muted); margin-top: 4px; }
+
+    /* DUAL TABLE (DATES & FEES) */
+    .details-dual-grid {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-bottom: 16px;
+    }
+    @media (max-width: 650px) { .details-dual-grid { grid-template-columns: 1fr; } }
+
+    .info-pane {
+      border: 1.5px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    .info-pane-head {
+      background: #f1f5f9;
+      padding: 8px 12px;
+      font-size: 0.85rem;
+      font-weight: 800;
+      color: var(--text);
+      border-bottom: 1px solid var(--border);
+    }
+    .info-list { list-style: none; padding: 10px 12px; font-size: 0.82rem; }
+    .info-list li { margin-bottom: 6px; display: flex; justify-content: space-between; }
+    .info-list li span:first-child { color: var(--text-muted); }
+    .info-list li span:last-child { font-weight: 700; color: var(--text); }
+
+    /* ELIGIBILITY & AGE BANNER */
+    .banner-pane {
+      background: #f8fafc;
+      border: 1.5px solid var(--border);
+      border-radius: 8px;
+      padding: 12px 14px;
+      margin-bottom: 16px;
+      font-size: 0.85rem;
+    }
+    .banner-pane strong { color: var(--primary); display: block; margin-bottom: 4px; }
+
+    /* USEFUL ACTION LINKS (CORE HUB) */
+    .action-links-table {
+      width: 100%;
+      border-collapse: collapse;
+      border: 1.5px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+      margin-top: 14px;
+      font-size: 0.85rem;
+    }
+    .action-links-table th { background: var(--primary); color: #fff; padding: 10px; text-align: left; }
+    .action-links-table td { padding: 10px 12px; border-bottom: 1px solid var(--border); }
+    .action-links-table tr:last-child td { border-bottom: none; }
+    .btn-action-link {
+      color: #0369a1;
+      font-weight: 800;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .btn-action-link:hover { text-decoration: underline; color: var(--primary); }
+
+    /* PROMO STRIP INSIDE EXAM DETAILS */
+    .companion-promo-box {
+      margin-top: 18px;
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      border-radius: 8px;
+      padding: 12px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
       gap: 10px;
     }
-    @media (max-width: 768px) { .util-buttons { grid-template-columns: repeat(2, 1fr); } }
-
-    .tool-link-tile {
-      background: #1e293b;
-      border: 1px solid #334155;
-      border-radius: 8px;
-      padding: 10px;
-      text-decoration: none;
+    .btn-promo {
+      background: #0284c7;
       color: #fff;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 0.82rem;
-      font-weight: 700;
-      transition: border-color 0.15s ease;
+      font-weight: 800;
+      font-size: 0.78rem;
+      padding: 6px 14px;
+      border-radius: 6px;
+      text-decoration: none;
     }
-    .tool-link-tile:hover { border-color: #38bdf8; }
 
     footer {
       text-align: center;
@@ -262,7 +340,7 @@
 
   <header>
     <div class="brand-title">SARKARI ALERT AI</div>
-    <div class="tagline">Official Recruitment Notifications, Admit Cards, Results & Answer Keys — Direct & Verified</div>
+    <div class="tagline">Official Recruitment Notifications, Admit Cards, Results & Direct Apply Links</div>
   </header>
 
   <!-- QUICK ACCESS HOT TILES -->
@@ -270,89 +348,52 @@
     <a href="#secJobs" class="tile-btn tile-red">📢 Latest Vacancies</a>
     <a href="#secAdmit" class="tile-btn tile-blue">🎫 Admit Cards</a>
     <a href="#secResults" class="tile-btn tile-green">🏆 Declared Results</a>
-    <a href="#secAnswer" class="tile-btn tile-orange">🔑 Answer Keys</a>
+    <a href="https://unknownuniversem-blip.github.io/exam-resizer/" class="tile-btn tile-orange">📷 Photo Resizer</a>
   </div>
 
-  <!-- LIVE SEARCH BAR -->
+  <!-- SEARCH BAR -->
   <div class="search-wrapper">
-    <input type="text" class="search-box" id="searchBox" placeholder="Type to filter any job, admit card, or result (e.g. SSC, UP Police, High Court, Railway, Teacher)..." oninput="filterAll()">
+    <input type="text" class="search-box" id="searchBox" placeholder="Type to filter any post (e.g. SSC CGL, Allahabad High Court, UP Police, RRB)..." oninput="filterAll()">
   </div>
 
-  <!-- TIER 1: THE CORE 3 COLUMNS -->
+  <!-- CORE 3-COLUMN VIEW -->
   <main class="tier-section">
-    <!-- 1. RESULTS -->
+    <!-- RESULTS -->
     <div class="box-card" id="secResults">
       <div class="box-header bg-results">Result (परिणाम)</div>
       <ul class="items-list" id="listResults"></ul>
     </div>
 
-    <!-- 2. ADMIT CARDS -->
+    <!-- ADMIT CARDS -->
     <div class="box-card" id="secAdmit">
       <div class="box-header bg-admit">Admit Card (प्रवेश पत्र)</div>
       <ul class="items-list" id="listAdmit"></ul>
     </div>
 
-    <!-- 3. LATEST JOBS -->
+    <!-- LATEST JOBS -->
     <div class="box-card" id="secJobs">
       <div class="box-header bg-jobs">Latest Jobs (नवीनतम भर्तियां)</div>
       <ul class="items-list" id="listJobs"></ul>
     </div>
   </main>
 
-  <!-- TIER 2: SECONDARY 4 COLUMNS (ANSWER KEY, SYLLABUS, ADMISSION, CERTIFICATES) -->
-  <section class="tier-lower">
-    <!-- 4. ANSWER KEY -->
-    <div class="box-card" id="secAnswer">
-      <div class="box-header bg-answer">Answer Key (उत्तर कुंजी)</div>
-      <ul class="items-list" id="listAnswer"></ul>
-    </div>
+  <!-- POPUP / DEDICATED EXAM DETAILS MODAL -->
+  <div class="details-modal" id="detailsModal">
+    <div class="details-container">
+      <button type="button" class="modal-close-btn" onclick="closeDetailsModal()">✕</button>
 
-    <!-- 5. SYLLABUS -->
-    <div class="box-card" id="secSyllabus">
-      <div class="box-header bg-syllabus">Syllabus (पाठ्यक्रम)</div>
-      <ul class="items-list" id="listSyllabus"></ul>
-    </div>
-
-    <!-- 6. ADMISSION -->
-    <div class="box-card" id="secAdmission">
-      <div class="box-header bg-admission">Admission (प्रवेश)</div>
-      <ul class="items-list" id="listAdmission"></ul>
-    </div>
-
-    <!-- 7. CERTIFICATE VERIFICATION -->
-    <div class="box-card" id="secCert">
-      <div class="box-header bg-cert">Certificate & Verification</div>
-      <ul class="items-list" id="listCert"></ul>
-    </div>
-  </section>
-
-  <!-- INTEGRATED CANDIDATE TOOLS (PROMOTES YOUR ECOSYSTEM) -->
-  <div class="utilities-grid">
-    <div class="utilities-card">
-      <div class="util-header">🛠️ Essential Exam Tools (फॉर्म भरने के लिए आवश्यक टूल्स)</div>
-      <div class="util-buttons">
-        <a href="https://unknownuniversem-blip.github.io/exam-resizer/" class="tool-link-tile">
-          <span>📷</span><span>Photo Resizer (20KB - 50KB)</span>
-        </a>
-        <a href="https://unknownuniversem-blip.github.io/signature-maker-studio/" class="tool-link-tile">
-          <span>✍️</span><span>Signature Maker Studio</span>
-        </a>
-        <a href="https://unknownuniversem-blip.github.io/hindi-typing-tutor/" class="tool-link-tile">
-          <span>⌨️</span><span>Mangal / Krutidev Typing</span>
-        </a>
-        <a href="https://unknownuniversem-blip.github.io/typer-racer-world/" class="tool-link-tile">
-          <span>🏎️</span><span>NitroTypers English Test</span>
-        </a>
+      <div class="details-body" id="modalBodyContent">
+        <!-- Injected via JavaScript -->
       </div>
     </div>
   </div>
 
   <footer>
-    <p>Sarkari Alert AI © 2026. Public recruitment information curated directly from official gazettes and recruitment boards. Free & Independent.</p>
+    <p>Sarkari Alert AI © 2026. Official recruitment information curated from official boards & gazettes. Free and independent.</p>
   </footer>
 
   <script>
-    let db = {};
+    let db = { jobs: [], admit: [], results: [] };
 
     window.addEventListener('DOMContentLoaded', () => {
       fetch('data.json')
@@ -362,7 +403,7 @@
           renderAll();
         })
         .catch(err => {
-          console.warn('Error loading data.json');
+          console.warn('Error reading data.json');
         });
     });
 
@@ -379,9 +420,9 @@
         return;
       }
 
-      ul.innerHTML = filtered.map(i => `
-        <li class="item-row">
-          <a href="${i.link}" target="_blank" rel="noopener noreferrer" class="item-title">${i.title}</a>
+      ul.innerHTML = filtered.map((i, index) => `
+        <li class="item-row" onclick="openExamDetails('${elementId}', ${index})">
+          <span class="item-title">${i.title}</span>
           <div class="item-meta">
             <span class="org-badge">${i.org || 'Govt'}</span>
             <span>${i.date || ''}</span>
@@ -391,19 +432,127 @@
     }
 
     function renderAll(q = '') {
-      renderColumn('listJobs', db.jobs, q);
-      renderColumn('listAdmit', db.admit, q);
       renderColumn('listResults', db.results, q);
-      renderColumn('listAnswer', db.answerkey, q);
-      renderColumn('listSyllabus', db.syllabus, q);
-      renderColumn('listAdmission', db.admission, q);
-      renderColumn('listCert', db.certificate, q);
+      renderColumn('listAdmit', db.admit, q);
+      renderColumn('listJobs', db.jobs, q);
     }
 
     function filterAll() {
       const q = document.getElementById('searchBox').value.trim().toLowerCase();
       renderAll(q);
     }
+
+    // OPEN DETAILED EXAM PAGE (EXACT SARKARI RESULT POST FORMAT)
+    function openExamDetails(colId, index) {
+      let list = [];
+      if (colId === 'listJobs') list = db.jobs;
+      else if (colId === 'listAdmit') list = db.admit;
+      else if (colId === 'listResults') list = db.results;
+
+      const item = list[index];
+      if (!item) return;
+
+      const dates = item.important_dates || { apply_start: 'Check Notification', apply_end: 'Check Notification', exam_date: 'To be notified', admit_card: 'Before Exam' };
+      const fees = item.fee || { gen_obc: 'Refer Notification', sc_st: 'Refer Notification', payment_mode: 'Online' };
+      const age = item.age_limit || { min: '18 Years', max: 'Post Specific', as_on: '01/08/2026' };
+      const links = item.links || { apply_online: '#', download_admit: '#', download_notice: '#', download_syllabus: '#', official_site: '#' };
+
+      const html = `
+        <div class="post-header-box">
+          <h2 class="post-title-main">${item.title}</h2>
+          <div class="post-sub-meta">
+            <b>Organization:</b> ${item.org} | <b>Total Posts:</b> ${item.total_posts || 'Not specified'} | <b>Post Name:</b> ${item.post_name || item.title}
+          </div>
+        </div>
+
+        <!-- DUAL PANE: DATES & FEES -->
+        <div class="details-dual-grid">
+          <div class="info-pane">
+            <div class="info-pane-head">📅 Important Dates (महत्वपूर्ण तिथियां)</div>
+            <ul class="info-list">
+              <li><span>Application Start:</span> <span>${dates.apply_start || 'Check Notification'}</span></li>
+              <li><span>Last Date to Apply:</span> <span>${dates.apply_end || 'Check Notification'}</span></li>
+              <li><span>Exam Date:</span> <span>${dates.exam_date || 'To be notified'}</span></li>
+              <li><span>Admit Card Available:</span> <span>${dates.admit_card || 'Before Exam'}</span></li>
+            </ul>
+          </div>
+
+          <div class="info-pane">
+            <div class="info-pane-head">💳 Application Fee (आवेदन शुल्क)</div>
+            <ul class="info-list">
+              <li><span>General / OBC / EWS:</span> <span>${fees.gen_obc || 'Nil'}</span></li>
+              <li><span>SC / ST / PH:</span> <span>${fees.sc_st || 'Nil'}</span></li>
+              <li><span>Female Candidates:</span> <span>${fees.female || 'As per norms'}</span></li>
+              <li><span>Payment Mode:</span> <span>${fees.payment_mode || 'Online / NetBanking'}</span></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- AGE & ELIGIBILITY -->
+        <div class="banner-pane">
+          <strong>🎂 Age Limit (आयु सीमा as on ${age.as_on || 'Current Year'}):</strong>
+          Minimum Age: <b>${age.min || '18 Years'}</b> | Maximum Age: <b>${age.max || 'Post specific'}</b> (Age relaxation applicable as per official recruitment rules).
+        </div>
+
+        <div class="banner-pane">
+          <strong>🎓 Educational Eligibility Criteria (शैक्षणिक योग्यता):</strong>
+          ${item.eligibility || 'Candidate must possess the required educational certificates from a recognized Board/University in India. Refer to the official notification for complete details.'}
+        </div>
+
+        <!-- ACTION LINKS TABLE (APPLY / ADMIT / NOTIFICATION / SYLLABUS) -->
+        <h3 style="font-size:1rem; font-weight:800; margin-top:18px;">🔗 Important Direct Links (महत्वपूर्ण लिंक्स)</h3>
+        <table class="action-links-table">
+          <tr>
+            <th>Document / Action</th>
+            <th>Direct Link</th>
+          </tr>
+          <tr>
+            <td><b>Download Admit Card (प्रवेश पत्र)</b></td>
+            <td><a href="${links.download_admit}" target="_blank" rel="noopener noreferrer" class="btn-action-link">Click Here ➔</a></td>
+          </tr>
+          <tr>
+            <td><b>Apply Online (ऑनलाइन आवेदन करें)</b></td>
+            <td><a href="${links.apply_online}" target="_blank" rel="noopener noreferrer" class="btn-action-link">Registration / Login ➔</a></td>
+          </tr>
+          <tr>
+            <td><b>Download Official Notification PDF</b></td>
+            <td><a href="${links.download_notice}" target="_blank" rel="noopener noreferrer" class="btn-action-link">Download PDF ➔</a></td>
+          </tr>
+          <tr>
+            <td><b>Download Syllabus & Exam Pattern</b></td>
+            <td><a href="${links.download_syllabus}" target="_blank" rel="noopener noreferrer" class="btn-action-link">View Syllabus ➔</a></td>
+          </tr>
+          <tr>
+            <td><b>Official Board Website</b></td>
+            <td><a href="${links.official_site}" target="_blank" rel="noopener noreferrer" class="btn-action-link">Visit Website ➔</a></td>
+          </tr>
+        </table>
+
+        <!-- COMPANION CROSS-PROMOTION -->
+        <div class="companion-promo-box">
+          <div style="font-size:0.8rem; color:#1e3a8a;">
+            <strong>Need Photo/Signature under 20KB/50KB or Hindi/English Typing Practice?</strong>
+            <div>Use our 100% free client-side tools designed for exam applicants.</div>
+          </div>
+          <div style="display:flex; gap:6px;">
+            <a href="https://unknownuniversem-blip.github.io/exam-resizer/" class="btn-promo" target="_blank">Photo Resizer</a>
+            <a href="https://unknownuniversem-blip.github.io/hindi-typing-tutor/" class="btn-promo" target="_blank">Typing Tutor</a>
+          </div>
+        </div>
+      `;
+
+      document.getElementById('modalBodyContent').innerHTML = html;
+      document.getElementById('detailsModal').classList.add('active');
+    }
+
+    function closeDetailsModal() {
+      document.getElementById('detailsModal').classList.remove('active');
+    }
+
+    // Close on background click
+    document.getElementById('detailsModal').addEventListener('click', (e) => {
+      if (e.target.id === 'detailsModal') closeDetailsModal();
+    });
   </script>
 </body>
 </html>
