@@ -1,0 +1,32 @@
+name: Sarkari Alert AI 30-Minute Autopilot
+
+on:
+  schedule:
+    # Runs automatically every 30 minutes, 24/7
+    - cron: '*/30 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  scrape-and-update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Run Autopilot Scraper
+        run: python autopilot.py
+
+      - name: Commit & Push if New Vacancies Found
+        run: |
+          git config --global user.name "SarkariAlert-Bot"
+          git config --global user.email "bot@sarkarialert.ai"
+          git add data.json
+          git diff --quiet && git diff --staged --quiet || (git commit -m "Autopilot: Ingested latest recruitment notifications [skip ci]" && git push)
