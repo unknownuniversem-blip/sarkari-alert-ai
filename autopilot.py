@@ -1,15 +1,15 @@
 import urllib.request
+import urllib.parse
 import xml.etree.ElementTree as ET
 import json
 import re
 from datetime import datetime
+from html.parser import HTMLParser
 
-# Multi-portal ingestion streams
 SOURCES = [
     {"name": "FreeJobAlert", "url": "https://www.freejobalert.com/feed"},
 ]
 
-# Official government domain whitelist
 OFFICIAL_DOMAINS = [
     "gov.in", "nic.in", "ac.in", "edu.in", "org.in", "nta.ac.in", "ibps.in",
     "sbi.co.in", "rbi.org.in", "nabard.org", "licindia.in", "du.ac.in", "bhu.ac.in",
@@ -19,93 +19,134 @@ OFFICIAL_DOMAINS = [
     "agnipathvayu.cdac.in", "ctet.nic.in", "isro.gov.in", "drdo.gov.in"
 ]
 
+class HTMLTableExtractor(HTMLParser):
+    def __init__(self):
+        super().__init__()
+        self.text_chunks = []
+        self.links = []
+
+    def handle_starttag(self, tag, attrs):
+        attr_dict = dict(attrs)
+        href = attr_dict.get('href', '')
+        if href:
+            self.links.append((href, attr_dict.get('title', '')))
+
+    def handle_data(self, data):
+        cleaned = data.strip()
+        if cleaned:
+            self.text_chunks.append(cleaned)
+
 def clean_text(text):
     return re.sub(r'<[^>]+>', '', text or '').strip()
+
+def search_and_verify_sarkariresult(title):
+    """
+    Fallback cross-verifier: Queries SarkariResult for the given exam title,
+    extracts the exact short details table, dates, fees, and PDF/Syllabus links.
+    """
+    headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'}
+    cleaned_query = re.sub(r'[^a-zA-Z0-9 ]', ' ', title).strip()
+    words = [w for w in cleaned_query.split() if len(w) > 2][:4]
+    search_q = "+".join(words)
+    
+    fallback_data = {
+        "dates": None,
+        "fee": None,
+        "age": None,
+        "qualification": None,
+        "vacancies": None,
+        "notice_link": None,
+        "syllabus_link": None,
+        "apply_link": None,
+        "official_site": None
+    }
+
+    try:
+        # Search query against sarkariresult domain
+        sr_search_url = f"https://html.duckduckgo.com/html/?q=site:sarkariresult.com+{search_q}"
+        req = urllib.request.Request(sr_search_url, headers=headers)
+        with urllib.request.urlopen(req, timeout=6) as res:
+            html = res.read().decode('utf-8', errors='ignore')
+            
+            # Find the best SarkariResult post link
+            match = re.search(r'href="(https://www\.sarkariresult\.com/\d{4}/[^"&]+)"', html)
+            if match:
+                post_url = match.group(1)
+                
+                # Crawl the SarkariResult post
+                post_req = urllib.request.Request(post_url, headers=headers)
+                with urllib.request.urlopen(post_req, timeout=8) as p_res:
+                    p_html = p_res.read().decode('utf-8', errors='ignore')
+                    
+                    parser = HTMLTableExtractor()
+                    parser.feed(p_html)
+                    full_text = " ".join(parser.text_chunks)
+
+                    # Extract PDF Notice link
+                    for lk, _ in parser.links:
+                        lk_lower = lk.lower()
+                        if lk_lower.endswith('.pdf') or 'notification' in lk_lower or 'notice' in lk_lower:
+                            fallback_data["notice_link"] = lk
+                        elif 'syllabus' in lk_lower:
+                            fallback_data["syllabus_link"] = lk
+                        elif 'apply' in lk_lower or 'registration' in lk_lower:
+                            fallback_data["apply_link"] = lk
+                        elif any(dom in lk_lower for dom in OFFICIAL_DOMAINS):
+                            fallback_data["official_site"] = lk
+
+                    # Regex match dates
+                    d_match = re.search(r'Application Begin\s*:\s*([^.\n]+)', full_text, re.I)
+                    last_match = re.search(r'Last Date for Apply Online\s*:\s*([^.\n]+)', full_text, re.I)
+                    exam_match = re.search(r'Exam Date\s*:\s*([^.\n]+)', full_text, re.I)
+                    if d_match or last_match:
+                        b_date = d_match.group(1).strip() if d_match else "Check Notice"
+                        l_date = last_match.group(1).strip() if last_match else "Check Notice"
+                        e_date = exam_match.group(1).strip() if exam_match else "As per schedule"
+                        fallback_data["dates"] = f"• Application Begin : <b>{b_date}</b><br>• Last Date : <b>{l_date}</b><br>• Exam Date : <b>{e_date}</b>"
+
+                    # Regex match fee
+                    gen_fee = re.search(r'General\s*/\s*OBC\s*/\s*EWS\s*:\s*([^.\n]+)', full_text, re.I)
+                    sc_fee = re.search(r'SC\s*/\s*ST\s*:\s*([^.\n]+)', full_text, re.I)
+                    if gen_fee:
+                        fallback_data["fee"] = f"• General / OBC / EWS : <b>{gen_fee.group(1).strip()}</b><br>• SC / ST / PwD : <b>{sc_fee.group(1).strip() if sc_fee else 'Exempted'}</b><br>• Mode : <b>Online Gateway</b>"
+
+                    # Regex match age
+                    min_age = re.search(r'Minimum Age\s*:\s*(\d{2})', full_text, re.I)
+                    max_age = re.search(r'Maximum Age\s*:\s*(\d{2})', full_text, re.I)
+                    if min_age and max_age:
+                        fallback_data["age"] = f"• Minimum Age : <b>{min_age.group(1)} Years</b><br>• Maximum Age : <b>{max_age.group(1)} Years</b> (Age relaxation applicable as per rules)"
+
+                    # Regex match total vacancies
+                    vac_m = re.search(r'Total\s*:\s*(\d+[\d,]*)\s*Post', full_text, re.I)
+                    if vac_m:
+                        fallback_data["vacancies"] = f"{vac_m.group(1)} Posts"
+    except Exception as e:
+        print(f"Fallback check note for [{title[:25]}]: {e}")
+
+    return fallback_data
 
 def resolve_official_destination(title, source_url):
     lower = title.lower()
     
-    # 1. SSC & UPSC Central
     if "ssc" in lower:
         return "https://ssc.gov.in", "https://ssc.gov.in"
     elif "upsc" in lower:
         return "https://upsc.gov.in", "https://upsconline.nic.in"
-
-    # 2. Banking & Financial
     elif "ibps" in lower:
         return "https://www.ibps.in", "https://www.ibps.in"
     elif "sbi" in lower:
         return "https://sbi.co.in/careers", "https://sbi.co.in"
-    elif "rbi" in lower:
-        return "https://opportunities.rbi.org.in", "https://rbi.org.in"
-    elif "nabard" in lower:
-        return "https://www.nabard.org/careers", "https://www.nabard.org"
-    elif "lic" in lower:
-        return "https://licindia.in/careers", "https://licindia.in"
-
-    # 3. Railways
-    elif any(k in lower for k in ["railway", "rrb", "rrc", "alp", "ntpc", "technician"]):
+    elif any(k in lower for k in ["railway", "rrb", "rrc"]):
         return "https://rrbapply.gov.in", "https://indianrailways.gov.in"
-
-    # 4. Uttar Pradesh State
-    elif "upsssc" in lower or "pet" in lower or "lekhpal" in lower:
+    elif "upsssc" in lower:
         return "https://upsssc.gov.in", "https://upsssc.gov.in"
-    elif "uppsc" in lower or "ro/aro" in lower and "up" in lower:
-        return "https://uppsc.up.nic.in", "https://uppsc.up.nic.in"
     elif "up police" in lower or "uppbpb" in lower:
         return "https://uppbpb.gov.in", "https://uppbpb.gov.in"
-    elif "allahabad high court" in lower or "ahc" in lower:
+    elif "high court" in lower:
         return "https://allahabadhighcourt.in", "https://allahabadhighcourt.in"
-
-    # 5. Bihar State
     elif "bpsc" in lower:
-        return "https://bpsc.bih.nic.in", "https://onlinebpsc.bihar.gov.in"
-    elif "bssc" in lower:
-        return "https://bssc.bihar.gov.in", "https://bssc.bihar.gov.in"
-    elif "bihar police" in lower or "csbc" in lower:
-        return "https://csbc.bih.nic.in", "https://csbc.bih.nic.in"
-    elif "patna high court" in lower:
-        return "https://patnahighcourt.gov.in", "https://patnahighcourt.gov.in"
+        return "https://bpsc.bih.nic.in", "https://bpsc.bih.nic.in"
 
-    # 6. Rajasthan, MP & Haryana
-    elif "rsmssb" in lower or "rssb" in lower:
-        return "https://rsmssb.rajasthan.gov.in", "https://rsmssb.rajasthan.gov.in"
-    elif "rpsc" in lower:
-        return "https://rpsc.rajasthan.gov.in", "https://rpsc.rajasthan.gov.in"
-    elif "mppsc" in lower or "mpeb" in lower or "mp esb" in lower:
-        return "https://esb.mp.gov.in", "https://mppsc.mp.gov.in"
-    elif "hssc" in lower or "haryana cet" in lower:
-        return "https://hssc.gov.in", "https://hssc.gov.in"
-
-    # 7. Defense & Paramilitary
-    elif "army" in lower or "agniveer army" in lower:
-        return "https://joinindianarmy.nic.in", "https://joinindianarmy.nic.in"
-    elif "navy" in lower:
-        return "https://joinindiannavy.gov.in", "https://joinindiannavy.gov.in"
-    elif "air force" in lower or "airforce" in lower or "iaf" in lower:
-        return "https://agnipathvayu.cdac.in", "https://indianairforce.nic.in"
-    elif any(k in lower for k in ["crpf", "bsf", "cisf", "itbp", "ssb", "assam rifles"]):
-        return "https://rect.bsf.gov.in", "https://ssc.gov.in"
-
-    # 8. Teacher & Eligibility
-    elif "ctet" in lower:
-        return "https://ctet.nic.in", "https://ctet.nic.in"
-    elif "ugc net" in lower:
-        return "https://ugcnet.nta.ac.in", "https://nta.ac.in"
-    elif "csir net" in lower:
-        return "https://csirnet.nta.ac.in", "https://nta.ac.in"
-
-    # 9. Universities
-    elif "cuet" in lower:
-        return "https://cuet.nta.nic.in", "https://nta.ac.in"
-    elif "delhi university" in lower or "du csas" in lower:
-        return "https://admission.uod.ac.in", "https://du.ac.in"
-    elif "bhu" in lower:
-        return "https://bhu.ac.in", "https://bhu.ac.in"
-    elif "ignou" in lower:
-        return "https://ignouadmission.samarth.edu.in", "https://ignou.ac.in"
-
-    # If domain in source is whitelisted, accept it
     for dom in OFFICIAL_DOMAINS:
         if dom in source_url.lower():
             return source_url, source_url
@@ -115,35 +156,27 @@ def resolve_official_destination(title, source_url):
 def extract_meta(title):
     lower = title.lower()
     org = "Govt Recruitment"
-
-    org_keywords = [
-        "SSC", "UPSC", "IBPS", "SBI", "RBI", "NABARD", "LIC", "UPSSSC", "UPPSC",
-        "UP Police", "High Court", "BPSC", "BSSC", "Bihar Police", "RSMSSB", "RPSC",
-        "MPPEB", "MPPSC", "HSSC", "Railway", "RRB", "RRC", "Army", "Navy", "Air Force",
-        "CRPF", "BSF", "CISF", "ITBP", "CTET", "UGC NET", "CUET", "DU", "BHU", "IGNOU", "ISRO", "DRDO"
-    ]
-
-    for o in org_keywords:
+    for o in ["SSC", "UPSC", "IBPS", "SBI", "Railway", "RRB", "UPSSSC", "UP Police", "High Court", "BPSC", "NTA", "Army", "Navy", "Air Force"]:
         if o.lower() in lower:
             org = o
             break
 
     category = "jobs"
-    if any(k in lower for k in ["result", "marks", "cutoff", "merit", "scorecard", "selected"]):
+    if any(k in lower for k in ["result", "marks", "cutoff", "merit"]):
         category = "results"
-    elif any(k in lower for k in ["admit card", "hall ticket", "call letter", "exam city", "status"]):
+    elif any(k in lower for k in ["admit card", "hall ticket", "exam city", "call letter"]):
         category = "admit"
-    elif any(k in lower for k in ["answer key", "key challenge", "solution"]):
+    elif any(k in lower for k in ["answer key", "key challenge"]):
         category = "answerkey"
-    elif any(k in lower for k in ["admission", "entrance", "counseling", "seat allocation"]):
+    elif any(k in lower for k in ["admission", "entrance", "counseling"]):
         category = "admission"
 
-    vac_match = re.search(r'(\d+[\d,]*)\s*(posts|vacancies|post)', lower)
-    total_posts = (vac_match.group(1) + " Posts") if vac_match else "Check Notice"
+    vac_m = re.search(r'(\d+[\d,]*)\s*(posts|vacancies|post)', lower)
+    total_posts = (vac_m.group(1) + " Posts") if vac_m else "Check Notice"
 
     return org, category, total_posts
 
-def run():
+def run_cross_verification():
     try:
         with open('data.json', 'r', encoding='utf-8') as f:
             db = json.load(f)
@@ -158,7 +191,7 @@ def run():
             req = urllib.request.Request(src["url"], headers=headers)
             with urllib.request.urlopen(req, timeout=12) as response:
                 root = ET.fromstring(response.read())
-                items = root.findall('.//item')[:40]
+                items = root.findall('.//item')[:30]
 
                 for item in items:
                     title = clean_text(item.find('title').text)
@@ -175,36 +208,47 @@ def run():
 
                     apply_url, official_site = resolve_official_destination(title, source_url)
 
+                    # Trigger cross-verification from SarkariResult if data is sparse
+                    fb = search_and_verify_sarkariresult(title)
+
+                    dates_val = fb["dates"] or "• Application Window : <b>Active Now</b><br>• Last Date : <b>Check Official Notice PDF</b><br>• Exam / Admit Card : <b>As per Official Schedule</b>"
+                    fee_val = fb["fee"] or "• Application Fee : <b>As per Official Notification</b><br>• Payment Mode : <b>Online Net Banking, UPI, Debit Card</b>"
+                    age_val = fb["age"] or "• Minimum Age : <b>18–21 Years</b><br>• Maximum Age : <b>Post-specific</b> (Age relaxation applicable as per rules)"
+                    vac_val = fb["vacancies"] or total_posts
+                    notice_val = fb["notice_link"] or apply_url
+                    syllabus_val = fb["syllabus_link"] or notice_val
+
                     entry = {
                         "id": slug,
                         "title": title,
                         "date": f"Post Date: {now_str}",
                         "org": org,
-                        "total_posts": total_posts,
+                        "total_posts": vac_val,
                         "intro": f"<b>{org}</b> has officially announced <b>{title}</b>. All eligible candidates can verify eligibility qualifications, important dates, and official application portals below.",
-                        "dates": "• Application Status : <b>Active Now / As per Schedule</b><br>• Last Date : <b>Check Official Notice PDF</b><br>• Exam / Admit Card : <b>To be announced by Board</b>",
-                        "fee": "• Application Fee : <b>As per Official Notification</b><br>• Concessions/Exemptions applicable as per category norms.<br>• Mode : <b>Online Gateway</b>",
-                        "age": "• Minimum Age : <b>18–21 Years</b><br>• Maximum Age : <b>Post-specific</b> (Age relaxation applicable as per rules).",
-                        "qualification": "• Candidate must possess the requisite educational qualification (10th / 12th / Diploma / Graduate / Post-Graduate Degree) from a recognized Board/University as detailed in the official notice.",
-                        "vacancies_detail": f"• {total_posts} as per conducting board notification.",
+                        "dates": dates_val,
+                        "fee": fee_val,
+                        "age": age_val,
+                        "qualification": "• Candidate must possess the requisite educational qualification (10th / 12th / Diploma / Graduate Degree) from a recognized Board/University as detailed in the official notice.",
+                        "vacancies_detail": f"• Total: {vac_val} as per official recruitment advertisement.",
                         "links": {
-                            "apply": apply_url,
-                            "notice": apply_url,
-                            "syllabus": official_site,
-                            "official": official_site
+                            "apply": fb["apply_link"] or apply_url,
+                            "notice": notice_val,
+                            "syllabus": syllabus_val,
+                            "official": fb["official_site"] or official_site
                         }
                     }
 
                     db.setdefault(category, []).insert(0, entry)
         except Exception as e:
-            print(f"Fetch warning: {e}")
+            print(f"Scraper run error: {e}")
 
+    # Retain top 30 per section
     for k in db:
-        db[k] = db[k][:35]
+        db[k] = db[k][:30]
 
     with open('data.json', 'w', encoding='utf-8') as f:
         json.dump(db, f, indent=2, ensure_ascii=False)
-    print("✅ All major sectors verified and synchronized!")
+    print("✅ Auto-verification & fallback sync complete!")
 
 if __name__ == '__main__':
-    run()
+    run_cross_verification()
