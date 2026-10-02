@@ -3,20 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <title>SARKARI RESULT | SarkariResult.com : Sarkari Result 2026, Latest Online Form</title>
-  <meta name="description" content="Sarkari Result, SarkariResult.com provides Latest Sarkari Naukri, Online Form, Admit Card, Result, Answer Key, Syllabus, and Admissions.">
+  <title>Sarkari Alert AI - Latest Govt Jobs, Admit Card, Results & Notifications</title>
+  <meta name="description" content="Sarkari Alert AI: Autopilot government job notification engine. Direct official apply links, admit cards, results, dates, and syllabus.">
 
   <!-- Privacy Analytics -->
   <script data-goatcounter="https://quicktools.goatcounter.com/count"
           data-goatcounter-settings='{"allow_local": true}'
           async src="//gc.zgo.at/count.js"></script>
 
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='4' fill='%23b91c1c'/%3E%3Ctext x='7' y='23' font-family='sans-serif' font-size='20' font-weight='900' fill='%23ffffff'%3ES%3C/text%3E%3C/svg%3E">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='4' fill='%23ab0909'/%3E%3Ctext x='7' y='23' font-family='sans-serif' font-size='20' font-weight='900' fill='%23ffffff'%3ES%3C/text%3E%3C/svg%3E">
 
   <style>
     :root {
       --sr-red: #a80707;
-      --sr-dark-red: #8f0606;
+      --sr-dark-red: #880505;
       --sr-nav-bg: #0b1536;
       --sr-link: #002699;
       --sr-border: #ab0808;
@@ -44,9 +44,9 @@
     .sr-header {
       background: var(--sr-red);
       color: #ffffff;
-      padding: 12px 10px;
+      padding: 14px 10px;
       text-align: center;
-      border-bottom: 2px solid var(--sr-dark-red);
+      border-bottom: 3px solid var(--sr-dark-red);
     }
     .sr-header h1 {
       font-size: clamp(2rem, 5.5vw, 3rem);
@@ -55,9 +55,10 @@
       text-transform: uppercase;
     }
     .sr-header h2 {
-      font-size: clamp(0.95rem, 2.5vw, 1.25rem);
+      font-size: clamp(0.9rem, 2.2vw, 1.15rem);
       font-weight: 700;
       letter-spacing: 0.02em;
+      opacity: 0.95;
     }
 
     /* NAVIGATION BAR */
@@ -80,7 +81,6 @@
     }
     .sr-nav a:hover { background: #1c2b5e; }
 
-    /* TOP NOTICE TAG */
     .top-notice-bar {
       text-align: center;
       padding: 6px 10px;
@@ -90,7 +90,6 @@
       background: #fff;
     }
 
-    /* WHATSAPP PILL BUTTON */
     .wa-btn-wrap {
       text-align: center;
       margin: 6px 0;
@@ -128,7 +127,7 @@
 
     .mq-card {
       color: #ffffff;
-      padding: 7px 4px;
+      padding: 8px 4px;
       text-align: center;
       text-decoration: none;
       font-size: 11px;
@@ -138,17 +137,14 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      cursor: pointer;
     }
     .mq-red { background: #d90429; }
     .mq-orange { background: #ff5400; }
     .mq-purple { background: #9d0208; }
     .mq-darkred { background: #6a040f; }
-    .mq-olive { background: #7b8d00; }
-    .mq-blue { background: #0077b6; }
-    .mq-maroon { background: #5a189a; }
-    .mq-green { background: #2b9348; }
 
-    /* MAIN SECTIONS GRID */
+    /* CONTENT GRID */
     .content-container {
       max-width: 1060px;
       margin: 12px auto;
@@ -161,16 +157,14 @@
       gap: 8px;
       margin-bottom: 12px;
     }
-    @media (max-width: 820px) {
-      .sec-row { grid-template-columns: repeat(2, 1fr); }
-    }
-    @media (max-width: 540px) {
-      .sec-row { grid-template-columns: 1fr; }
-    }
+    @media (max-width: 820px) { .sec-row { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 540px) { .sec-row { grid-template-columns: 1fr; } }
 
     .sr-box {
       border: 1px solid var(--sr-border);
       background: #ffffff;
+      display: flex;
+      flex-direction: column;
     }
     .sr-box-title {
       background: var(--sr-red);
@@ -185,6 +179,7 @@
       list-style-type: none;
       padding: 6px 8px;
       font-size: 12px;
+      flex: 1;
     }
     .sr-links-list li {
       margin-bottom: 7px;
@@ -222,9 +217,7 @@
       display: inline-block;
     }
 
-    /* ---------------------------------------------------------------------- */
-    /* POST DETAILS VIEW (EXACT SCREENSHOT LAYOUT) */
-    /* ---------------------------------------------------------------------- */
+    /* POST DETAILS VIEW */
     #postDetailsView {
       display: none;
       max-width: 980px;
@@ -263,7 +256,6 @@
       line-height: 1.45;
     }
 
-    /* RED BORDER SHORT DETAILS TABLE */
     .short-details-table {
       width: 100%;
       border: 2px solid var(--sr-border);
@@ -290,7 +282,6 @@
       text-align: center;
     }
 
-    /* AGE LIMIT & TOTAL POST BAR */
     .age-bar-table {
       width: 100%;
       border: 2px solid var(--sr-border);
@@ -320,7 +311,6 @@
       padding: 10px;
     }
 
-    /* STEPS BOX */
     .steps-box {
       border: 2px solid var(--sr-border);
       margin-bottom: 10px;
@@ -339,7 +329,6 @@
       line-height: 1.5;
     }
 
-    /* YELLOW IMPORTANT LINKS TABLE */
     .links-table {
       width: 100%;
       border: 2px solid var(--sr-border);
@@ -368,7 +357,6 @@
     }
     .links-table td a:hover { text-decoration: underline; color: #cc0000; }
 
-    /* FOOTER */
     .sr-footer {
       border-top: 1px solid #ccc;
       padding: 16px 8px;
@@ -383,19 +371,19 @@
 
   <!-- UTILITY ECOSYSTEM BAR -->
   <div class="net-bar">
-    <div>⚡ QuickTools Ecosystem: Zero-Tracking Utilities</div>
+    <div>⚡ QuickTools India Ecosystem</div>
     <div>
-      <a href="https://unknownuniversem-blip.github.io/hindi-typing-tutor/">⌨️ Hindi Typing Tutor</a> |
+      <a href="https://unknownuniversem-blip.github.io/hindi-typing-tutor/">⌨️️ Hindi Typing Tutor</a> |
       <a href="https://unknownuniversem-blip.github.io/typer-racer-world/">🏎️ NitroTypers</a> |
       <a href="https://unknownuniversem-blip.github.io/exam-resizer/">📷 20KB/50KB Resizer</a> |
       <a href="https://unknownuniversem-blip.github.io/">🏠 Hub</a>
     </div>
   </div>
 
-  <!-- SARKARI RESULT BRAND HEADER -->
+  <!-- OWN BRANDED SARKARI ALERT AI HEADER -->
   <header class="sr-header">
-    <h1>SARKARI RESULT™</h1>
-    <h2>SarkariResult.com.cm</h2>
+    <h1>SARKARI ALERT AI™</h1>
+    <h2>SarkariAlert.AI — Autopilot Govt Recruitment Portal</h2>
   </header>
 
   <!-- NAVIGATION BAR -->
@@ -412,171 +400,126 @@
   <!-- HOME PAGE VIEW -->
   <div id="homeMainView">
     <div class="top-notice-bar">
-      <b>Sarkari Result ™ Official website since 2009</b> – Get Online Form, Results, Admit Card, Answer Key, Syllabus, Career News, Sarkari Yojana.
+      <b>Sarkari Alert AI™ Automated Portal</b> – Real-time auto-fetched Government Jobs, Admit Cards, Exam Results, Answer Keys, and Official Notifications.
     </div>
 
     <div class="wa-btn-wrap">
-      <a href="https://unknownuniversem-blip.github.io/hindi-typing-tutor/" class="btn-whatsapp">Join WhatsApp Channel</a>
+      <a href="https://unknownuniversem-blip.github.io/hindi-typing-tutor/" class="btn-whatsapp">Join Free Updates Channel</a>
     </div>
 
-    <div class="tools-title">SarkariResult Tools</div>
+    <div class="tools-title">Sarkari Alert AI Tools</div>
 
     <!-- COLORFUL MARQUEE BOXES -->
-    <div class="marquee-grid">
-      <a href="#" onclick="openDetailByKey('rrb_section_controller')" class="mq-card mq-red">RRB Section Controller City Details 2026</a>
-      <a href="#" onclick="openDetailByKey('ssc_chsl_2026')" class="mq-card mq-orange">SSC CHSL Online Form (2536 Posts)</a>
-      <a href="#" onclick="openDetailByKey('bpsc_tre_2026')" class="mq-card mq-purple">BPSC School Teacher Form (33,520 Posts)</a>
-      <a href="#" onclick="openDetailByKey('up_police_si')" class="mq-card mq-darkred">UP Police SI / Constable Online Form</a>
-      <a href="#" onclick="openDetailByKey('rrb_ntpc_2026')" class="mq-card mq-olive">RRB NTPC Graduate Level Form (3477 Posts)</a>
-      <a href="#" onclick="openDetailByKey('ahc_ro_aro')" class="mq-card mq-blue">Allahabad High Court RO / ARO Form</a>
-      <a href="#" onclick="openDetailByKey('upsssc_pet')" class="mq-card mq-maroon">UPSSSC Revised Exam Date 2026</a>
-      <a href="#" onclick="openDetailByKey('upsc_pre_2026')" class="mq-card mq-green">UPSC Civil Services Prelims Admit Card</a>
+    <div class="marquee-grid" id="marqueeGrid">
+      <a onclick="openFirstInCat('jobs')" class="mq-card mq-red">Latest Govt Job Online Forms</a>
+      <a onclick="openFirstInCat('admit')" class="mq-card mq-orange">Latest Exam City & Admit Cards</a>
+      <a onclick="openFirstInCat('results')" class="mq-card mq-purple">Declared Exam Results & Marks</a>
+      <a onclick="openFirstInCat('answerkey')" class="mq-card mq-darkred">Provisional Answer Keys & Solutions</a>
     </div>
 
     <!-- MAIN 3-COLUMN ROWS -->
     <div class="content-container">
       <!-- ROW 1: RESULTS | ADMIT CARD | LATEST JOBS -->
       <div class="sec-row">
-        <!-- 1. RESULTS -->
         <div class="sr-box" id="secResults">
           <div class="sr-box-title">Results</div>
-          <ul class="sr-links-list">
-            <li><a onclick="openDetailByKey('rrb_section_controller')">RRB Section Controller Exam City Details 2026</a></li>
-            <li><a onclick="openDetailByKey('bpsc_tre_2026')">BPSC School Teacher TRE 4.0 Final Result</a></li>
-            <li><a onclick="openDetailByKey('ssc_chsl_2026')">SSC CGL Tier 1 Marks & Cutoff Score 2026</a></li>
-            <li><a onclick="openDetailByKey('up_police_si')">UP Police Constable Written Exam Result & Merit</a></li>
-            <li><a onclick="openDetailByKey('rrb_ntpc_2026')">Railway RRB ALP CBT-II Result 2026 - Out</a></li>
-            <li><a onclick="openDetailByKey('ahc_ro_aro')">Allahabad High Court RO Final Selection List</a></li>
-          </ul>
-          <div class="view-more-wrap"><a href="#" class="btn-view-more">View More</a></div>
+          <ul class="sr-links-list" id="list_results"><li>Loading latest results...</li></ul>
+          <div class="view-more-wrap"><a href="#secResults" class="btn-view-more">View More</a></div>
         </div>
 
-        <!-- 2. ADMIT CARD -->
         <div class="sr-box" id="secAdmit">
           <div class="sr-box-title">Admit Card</div>
-          <ul class="sr-links-list">
-            <li><a onclick="openDetailByKey('rrb_section_controller')">RRB Section Controller Exam City Details 2026</a></li>
-            <li><a onclick="openDetailByKey('ssc_chsl_2026')">SSC CHSL Tier II Typing Test Admit Card 2026</a></li>
-            <li><a onclick="openDetailByKey('upsc_pre_2026')">UPSC Civil Services Prelims Hall Ticket 2026</a></li>
-            <li><a onclick="openDetailByKey('rrb_ntpc_2026')">Railway RRB Technician Exam City Slip</a></li>
-            <li><a onclick="openDetailByKey('ahc_ro_aro')">Allahabad High Court RO/ARO Skill Test Admit Card</a></li>
-            <li><a onclick="openDetailByKey('up_police_si')">UP Police Constable PET Physical Admit Card</a></li>
-          </ul>
-          <div class="view-more-wrap"><a href="#" class="btn-view-more">View More</a></div>
+          <ul class="sr-links-list" id="list_admit"><li>Loading latest admit cards...</li></ul>
+          <div class="view-more-wrap"><a href="#secAdmit" class="btn-view-more">View More</a></div>
         </div>
 
-        <!-- 3. LATEST JOBS -->
         <div class="sr-box" id="secJobs">
           <div class="sr-box-title">Latest Jobs</div>
-          <ul class="sr-links-list">
-            <li><a onclick="openDetailByKey('ssc_chsl_2026')">SSC CHSL 10+2 Online Form 2026 (2536 Posts)</a></li>
-            <li><a onclick="openDetailByKey('rrb_section_controller')">RRB Section Controller Online Form 2026</a></li>
-            <li><a onclick="openDetailByKey('bpsc_tre_2026')">BPSC School Teacher TRE Online Form (33,520 Posts)</a></li>
-            <li><a onclick="openDetailByKey('rrb_ntpc_2026')">RRB NTPC Graduate Level Online Form (3477 Posts)</a></li>
-            <li><a onclick="openDetailByKey('ahc_ro_aro')">Allahabad High Court RO / ARO Recruitment 2026</a></li>
-            <li><a onclick="openDetailByKey('up_police_si')">UP Police Sub Inspector & Constable Online Form</a></li>
-          </ul>
-          <div class="view-more-wrap"><a href="#" class="btn-view-more">View More</a></div>
+          <ul class="sr-links-list" id="list_jobs"><li>Loading latest jobs...</li></ul>
+          <div class="view-more-wrap"><a href="#secJobs" class="btn-view-more">View More</a></div>
         </div>
       </div>
 
       <!-- ROW 2: ANSWER KEY | DOCUMENTS | ADMISSION -->
       <div class="sec-row">
-        <!-- ANSWER KEY -->
         <div class="sr-box" id="secAnswer">
           <div class="sr-box-title">Answer Key</div>
-          <ul class="sr-links-list">
-            <li><a onclick="openDetailByKey('rrb_section_controller')">Railway RRB Section Controller Provisional Answer Key</a></li>
-            <li><a onclick="openDetailByKey('ssc_chsl_2026')">SSC CGL Tier 1 Answer Key & Challenge Portal</a></li>
-            <li><a onclick="openDetailByKey('up_police_si')">UP Police Constable Written Exam Answer Key</a></li>
-            <li><a onclick="openDetailByKey('rrb_ntpc_2026')">RRB ALP CBT Question Paper Key</a></li>
-          </ul>
-          <div class="view-more-wrap"><a href="#" class="btn-view-more">View More</a></div>
+          <ul class="sr-links-list" id="list_answerkey"><li>Loading answer keys...</li></ul>
+          <div class="view-more-wrap"><a href="#secAnswer" class="btn-view-more">View More</a></div>
         </div>
 
-        <!-- DOCUMENTS -->
         <div class="sr-box" id="secDocuments">
-          <div class="sr-box-title">Documents</div>
+          <div class="sr-box-title">Documents & Verification</div>
           <ul class="sr-links-list">
             <li><a href="https://edistrict.up.gov.in" target="_blank">UP Domicile (निवास), Caste (जाति) & Income (आय) Certificate</a></li>
-            <li><a href="https://uidai.gov.in" target="_blank">Aadhar Card Download, Correction & PVC Order</a></li>
+            <li><a href="https://uidai.gov.in" target="_blank">Aadhaar Card Download, Correction & PVC Order</a></li>
             <li><a href="https://incometax.gov.in" target="_blank">PAN Card Registration, Correction & Aadhaar Link</a></li>
             <li><a href="https://voters.eci.gov.in" target="_blank">Voter ID Card Online Apply & Electoral Search</a></li>
           </ul>
           <div class="view-more-wrap"><a href="#" class="btn-view-more">View More</a></div>
         </div>
 
-        <!-- ADMISSION -->
         <div class="sr-box" id="secAdmission">
-          <div class="sr-box-title">Admission</div>
-          <ul class="sr-links-list">
+          <div class="sr-box-title">Admission & Entrance</div>
+          <ul class="sr-links-list" id="list_admission">
             <li><a href="https://neet.nta.nic.in" target="_blank">NTA NEET UG Online Form 2026</a></li>
             <li><a href="https://cuet.nta.nic.in" target="_blank">CUET UG Central University Admission Form</a></li>
             <li><a href="https://jeecup.admissions.nic.in" target="_blank">UP Polytechnic JEECUP Online Form</a></li>
-            <li><a href="https://bujhansi.ac.in" target="_blank">UP B.Ed Joint Entrance Exam Counseling Schedule</a></li>
           </ul>
-          <div class="view-more-wrap"><a href="#" class="btn-view-more">View More</a></div>
+          <div class="view-more-wrap"><a href="#secAdmission" class="btn-view-more">View More</a></div>
         </div>
       </div>
 
       <!-- ROW 3: 10TH/ITI JOBS | OUTSOURCING JOBS | SYLLABUS -->
       <div class="sec-row">
-        <!-- 10TH/ITI JOBS -->
         <div class="sr-box">
-          <div class="sr-box-title">10th/ITI Jobs</div>
+          <div class="sr-box-title">10th / ITI Pass Jobs</div>
           <ul class="sr-links-list">
-            <li><a onclick="openDetailByKey('rrb_ntpc_2026')">Railway RRC NWR Apprentice Form (2472 Posts)</a></li>
-            <li><a onclick="openDetailByKey('up_police_si')">UP Police Constable 10th/12th Level Form</a></li>
-            <li><a onclick="openDetailByKey('ssc_chsl_2026')">SSC MTS Non-Technical & Havaldar Online Form</a></li>
+            <li><a onclick="openFirstInCat('jobs')">Railway RRC Trade Apprentice Vacancy 2026</a></li>
+            <li><a onclick="openFirstInCat('jobs')">SSC Multi-Tasking Staff (MTS) & Havaldar Form</a></li>
+            <li><a onclick="openFirstInCat('jobs')">State Police Constable Matric/Intermediate Form</a></li>
           </ul>
           <div class="view-more-wrap"><a href="#" class="btn-view-more">View More</a></div>
         </div>
 
-        <!-- OUTSOURCING JOBS -->
         <div class="sr-box">
-          <div class="sr-box-title">Outsourcing Jobs</div>
+          <div class="sr-box-title">Outsourcing & State Jobs</div>
           <ul class="sr-links-list">
-            <li><a href="https://sewayojan.up.nic.in" target="_blank">UP Basic Shiksha Vibhag Assistant Accountant Form</a></li>
-            <li><a href="https://sewayojan.up.nic.in" target="_blank">UP Basic Shiksha Vibhag Computer Operator Form</a></li>
-            <li><a href="https://sewayojan.up.nic.in" target="_blank">UP Ghaziabad & Rampur ECCE Educator Online Form</a></li>
+            <li><a href="https://sewayojan.up.nic.in" target="_blank">UP Sewayojan Block Data Entry Operator</a></li>
+            <li><a href="https://sewayojan.up.nic.in" target="_blank">UP Basic Shiksha Vibhag Computer Assistant</a></li>
+            <li><a href="https://sewayojan.up.nic.in" target="_blank">Health Mission NHM Community Staff Nurse Vacancy</a></li>
           </ul>
           <div class="view-more-wrap"><a href="#" class="btn-view-more">View More</a></div>
         </div>
 
-        <!-- SYLLABUS -->
         <div class="sr-box" id="secSyllabus">
-          <div class="sr-box-title">Syllabus</div>
-          <ul class="sr-links-list">
-            <li><a onclick="openDetailByKey('rrb_section_controller')">RRB Section Controller Exam Pattern & Syllabus</a></li>
-            <li><a onclick="openDetailByKey('ssc_chsl_2026')">SSC CHSL Tier 1 & Tier 2 Detailed Syllabus</a></li>
-            <li><a onclick="openDetailByKey('ahc_ro_aro')">Allahabad High Court RO/ARO Typing Criteria</a></li>
+          <div class="sr-box-title">Syllabus & Pattern</div>
+          <ul class="sr-links-list" id="list_syllabus">
+            <li><a onclick="openFirstInCat('jobs')">SSC CGL Tier 1 & Tier 2 Detailed Syllabus</a></li>
+            <li><a onclick="openFirstInCat('jobs')">Railway NTPC CBT-1 & CBT-2 Exam Pattern</a></li>
+            <li><a onclick="openFirstInCat('jobs')">High Court Steno & Typing Speed Criteria</a></li>
           </ul>
-          <div class="view-more-wrap"><a href="#" class="btn-view-more">View More</a></div>
+          <div class="view-more-wrap"><a href="#secSyllabus" class="btn-view-more">View More</a></div>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- ---------------------------------------------------------------------- -->
-  <!-- POST DETAILS VIEW (IDENTICAL TO SCREENSHOTS 1 & 2) -->
-  <!-- ---------------------------------------------------------------------- -->
+  <!-- POST DETAILS VIEW (AUTO GENERATED FROM SCRAPED NOTIFICATIONS) -->
   <div id="postDetailsView">
-    <button class="btn-back-home" onclick="showHome()">← Back to Sarkari Result Home</button>
+    <button class="btn-back-home" onclick="showHome()">← Back to Sarkari Alert AI Home</button>
 
-    <div class="post-header-title" id="pTitle">RRB Section Controller Exam City Details 2026</div>
-    <div class="post-date-tag" id="pDate">Post Date: October 2, 2026 10:28 Pm</div>
+    <div class="post-header-title" id="pTitle">Notification Details</div>
+    <div class="post-date-tag" id="pDate">Post Date: Active</div>
 
-    <p class="post-intro-p" id="pIntro">
-      <b>Railway Recruitment Board (RRB)</b>, Has Released <b>The Exam City Details</b> On Its <b>Official Website</b> For The Recruitment Of <b>Section Controller Examination 2026</b>. The <b>Exam</b> Will Be Conducted On <b>12 – 13 October 2026</b>. Candidates Can Also Check Their <b>Exam City Details</b> By Using Their <b>Enrollment Number, Registration Number, Or Date Of Birth</b> By Logging Into The <b>Portal. The Direct Link</b> Is Provided Below. (Advt No : CEN 03/2026)
-    </p>
+    <p class="post-intro-p" id="pIntro">Notice summary.</p>
 
-    <!-- SHORT DETAILS RED BORDER TABLE -->
     <table class="short-details-table">
       <tr>
         <th colspan="2" class="th-header-red" id="pShortHead">
-          RRB Section Controller Exam City Details 2026<br>
-          <span style="color:#008000; font-size:12px;">RRB Section Controller Examination 2026 : Short Details</span><br>
-          <span style="color:#000; font-size:11px;">SarkariResult.Com.Cm</span>
+          Recruitment Details<br>
+          <span style="color:#008000; font-size:12px;">Sarkari Alert AI : Short Details</span><br>
+          <span style="color:#000; font-size:11px;">SarkariAlert.AI</span>
         </th>
       </tr>
       <tr>
@@ -584,96 +527,48 @@
         <th class="th-col-title" style="width:50%;">Application Fee</th>
       </tr>
       <tr>
-        <td id="pDatesCol">
-          • Online Apply Start Date : <b>15 July 2026</b><br>
-          • Online Apply Last Date : <b>14 August 2026 (23:59 PM)</b><br>
-          • Last Date For Fee Payment : <b>16 August 2026</b><br>
-          • Correction Date : <b>17 – 26 August 2026</b><br>
-          • <span style="background:#ffef7a; color:#b00;">Exam Date : 12 – 13 October 2026</span><br>
-          • <span style="color:#b00; font-weight:bold;">Exam City Details : 02 October 2026 Available</span><br>
-          • Admit Card : <b>Before Exam</b><br>
-          • Result Date : <b>Will Be Updated Here Soon</b>
-        </td>
-        <td id="pFeeCol">
-          • For <b>General / OBC / EWS : ₹ 500/-</b><br>
-          • For <b>SC / ST / EBC : ₹ 250/-</b><br>
-          • For <b>All Category Female : ₹ 250/-</b><br>
-          • <b>After Appearing In CBT-I Exam</b><br>
-          &nbsp;&nbsp;• UR / OBC / EWS Fee Refund : <b>Rs. 400/-</b><br>
-          &nbsp;&nbsp;• SC / ST / PH & Female Refund : <b>Rs. 250/-</b><br>
-          • <b>Payment Mode (Online):</b> Debit Card, Credit Card, Internet Banking, IMPS, UPI.
-        </td>
+        <td id="pDatesCol">• Application Dates : Active</td>
+        <td id="pFeeCol">• Application Fee : Check Notification</td>
       </tr>
     </table>
 
-    <!-- AGE LIMITS & TOTAL POSTS TABLE -->
     <table class="age-bar-table">
       <tr>
-        <td class="age-header-red" style="width:70%;">RRB Section Controller Notification 2026 : Age Limits As On 01 July 2026</td>
-        <td class="total-posts-head" style="width:30%;">Total Post</td>
+        <td class="age-header-red" style="width:70%;">Age Limits Criteria</td>
+        <td class="total-posts-head" style="width:30%;">Total Posts</td>
       </tr>
       <tr>
-        <td style="padding:8px 12px; vertical-align:middle;" id="pAgeCol">
-          • Minimum Age : <b>20 Years</b><br>
-          • Maximum Age : <b>33 Years</b><br>
-          • <b>RRB</b> Provides Age Relaxation For The Position As Per Regulations.
-        </td>
-        <td class="total-posts-count" id="pTotalPostCol">119 Posts</td>
+        <td style="padding:8px 12px; vertical-align:middle;" id="pAgeCol">• Check official notification for age rules.</td>
+        <td class="total-posts-count" id="pTotalPostCol">Open</td>
       </tr>
     </table>
 
-    <!-- HOW TO CHECK STEPS BOX -->
     <div class="steps-box">
-      <div class="steps-head">How To Check & Download RRB Section Controller Exam City Details 2026</div>
+      <div class="steps-head">How To Apply & Download Official Notification</div>
       <div class="steps-body">
-        • Visit The Official Website Of Your Respective <b>Railway Recruitment Board (RRB)</b>.<br>
-        • Go To The <b>CEN 03/2026 – Section Controller</b> Recruitment Section.<br>
-        • Click On The <b>"Exam City & Date Intimation"</b> Link.<br>
-        • Enter Your <b>Registration Number/Application Number And Date Of Birth/Password</b>.<br>
-        • Click On The <b>Login/Submit</b> Button.<br>
-        • Your <b>Exam Date And City Details</b> Will Appear On The Screen.<br>
-        • Check All The Details Carefully And Download/Save The Information For Future Reference.
+        • Click the direct link below to visit the official conducting board portal.<br>
+        • Download the official notification PDF and verify eligibility criteria.<br>
+        • Complete the registration / login form and upload required documents.<br>
+        • Submit the application before the closing deadline and keep a printed copy.
       </div>
     </div>
 
-    <!-- YELLOW IMPORTANT USEFUL LINKS TABLE -->
     <table class="links-table">
       <tr>
-        <th colspan="2">SOME USEFUL IMPORTANT LINKS</th>
+        <th colspan="2">USEFUL IMPORTANT DIRECT LINKS</th>
       </tr>
       <tr>
-        <td style="width:60%;">Check Exam City Details</td>
-        <td style="width:40%; text-align:center;"><a href="https://rrbapply.gov.in" target="_blank">Click Here</a></td>
+        <td style="width:60%;">Direct Official Link / Registration</td>
+        <td style="width:40%; text-align:center;"><a id="pApplyLink" href="#" target="_blank">Click Here</a></td>
       </tr>
       <tr>
-        <td>Download Application Status</td>
-        <td style="text-align:center;"><a href="https://rrbapply.gov.in" target="_blank">Click Here</a></td>
+        <td>Download Official Notification PDF</td>
+        <td style="text-align:center;"><a id="pNoticeLink" href="#" target="_blank">Click Here</a></td>
       </tr>
       <tr>
-        <td>Check Exam Date Notice</td>
-        <td style="text-align:center;"><a href="https://rrbapply.gov.in" target="_blank">Click Here</a></td>
+        <td>Conducting Board Official Website</td>
+        <td style="text-align:center;"><a id="pOfficialLink" href="#" target="_blank">Click Here</a></td>
       </tr>
-      <tr>
-        <td>Apply Online Link</td>
-        <td style="text-align:center;"><a href="https://rrbapply.gov.in" target="_blank">Click Here</a></td>
-      </tr>
-      <tr>
-        <td>Check Official Notification</td>
-        <td style="text-align:center;"><a href="https://rrbapply.gov.in" target="_blank">Click Here</a></td>
-      </tr>
-      <tr>
-        <td>Join Sarkari Result WhatsApp Channel</td>
-        <td style="text-align:center;"><a href="https://unknownuniversem-blip.github.io/hindi-typing-tutor/">Click Here</a></td>
-      </tr>
-      <tr>
-        <td>Join Sarkari Result Telegram Channel</td>
-        <td style="text-align:center;"><a href="https://unknownuniversem-blip.github.io/typer-racer-world/">Click Here</a></td>
-      </tr>
-      <tr>
-        <td>Official Board Website</td>
-        <td style="text-align:center;"><a href="https://indianrailways.gov.in" target="_blank">Click Here</a></td>
-      </tr>
-      <!-- Direct promotion for your exam tools -->
       <tr style="background:#e0f2fe;">
         <td style="color:#0369a1;">📷 Need Photo / Signature Resizer for Govt Forms?</td>
         <td style="text-align:center;"><a href="https://unknownuniversem-blip.github.io/exam-resizer/" target="_blank" style="color:#0369a1;">Resize (20KB - 50KB)</a></td>
@@ -686,87 +581,37 @@
   </div>
 
   <footer class="sr-footer">
-    <p><b>Official Website Of Sarkari Result™ – SarkariResult.Com.Cm | Since 2009</b></p>
+    <p><b>Sarkari Alert AI™ – SarkariAlert.AI | Autopilot Recruitment Engine</b></p>
     <p style="font-size:10px; color:#666; margin-top:4px;">
-      Disclaimer: Information Regarding Any Exam Form, Results/Marks, Answer Key Are Published On This Website Direct From Official Gazette Boards For Instant Reference.
+      Disclaimer: All notifications and links are aggregated directly from official gazettes and conducting board announcements for informational access.
     </p>
   </footer>
 
   <script>
-    const examDataStore = {
-      rrb_section_controller: {
-        title: "RRB Section Controller Exam City Details 2026",
-        date: "Post Date: October 2, 2026 10:28 Pm",
-        intro: "<b>Railway Recruitment Board (RRB)</b>, Has Released <b>The Exam City Details</b> On Its <b>Official Website</b> For The Recruitment Of <b>Section Controller Examination 2026</b>. The <b>Exam</b> Will Be Conducted On <b>12 – 13 October 2026</b>. Candidates Can Also Check Their <b>Exam City Details</b> By Using Their <b>Enrollment Number, Registration Number, Or Date Of Birth</b> By Logging Into The <b>Portal. The Direct Link</b> Is Provided Below. (Advt No : CEN 03/2026)",
-        datesCol: "• Online Apply Start Date : <b>15 July 2026</b><br>• Online Apply Last Date : <b>14 August 2026 (23:59 PM)</b><br>• Last Date For Fee Payment : <b>16 August 2026</b><br>• Correction Date : <b>17 – 26 August 2026</b><br>• <span style='background:#ffef7a; color:#b00;'>Exam Date : 12 – 13 October 2026</span><br>• <span style='color:#b00; font-weight:bold;'>Exam City Details : 02 October 2026 Available</span><br>• Admit Card : <b>Before Exam</b><br>• Result Date : <b>Will Be Updated Here Soon</b>",
-        feeCol: "• For <b>General / OBC / EWS : ₹ 500/-</b><br>• For <b>SC / ST / EBC : ₹ 250/-</b><br>• For <b>All Category Female : ₹ 250/-</b><br>• <b>After Appearing In CBT-I Exam</b><br>&nbsp;&nbsp;• UR / OBC / EWS Fee Refund : <b>Rs. 400/-</b><br>&nbsp;&nbsp;• SC / ST / PH & Female Refund : <b>Rs. 250/-</b><br>• <b>Payment Mode (Online):</b> Debit Card, Credit Card, Internet Banking, UPI.",
-        ageCol: "• Minimum Age : <b>20 Years</b><br>• Maximum Age : <b>33 Years</b><br>• <b>RRB</b> Provides Age Relaxation For The Position As Per Regulations.",
-        totalPosts: "119 Posts"
-      },
-      ssc_chsl_2026: {
-        title: "SSC CHSL (10+2) Online Form 2026 (2536 Posts)",
-        date: "Post Date: October 1, 2026 08:15 Pm",
-        intro: "<b>Staff Selection Commission (SSC)</b> Has Released The Official Notification For <b>Combined Higher Secondary Level (10+2) Examination 2026</b> For <b>2,536 Posts</b> of LDC, JSA & Data Entry Operator (DEO). All Eligible 10+2 Intermediate Candidates Can Apply Online.",
-        datesCol: "• Online Apply Start Date : <b>05 October 2026</b><br>• Online Apply Last Date : <b>04 November 2026</b><br>• Last Date Fee Payment : <b>05 November 2026</b><br>• Tier-I Exam Date : <b>Dec 2026</b><br>• Admit Card : <b>Available Before Exam</b>",
-        feeCol: "• General / OBC / EWS : <b>₹ 100/-</b><br>• SC / ST / PH : <b>₹ 0/- (Exempted)</b><br>• All Category Female : <b>₹ 0/- (Exempted)</b><br>• Pay Fee Online via Debit/Credit Card, Net Banking, UPI.",
-        ageCol: "• Minimum Age : <b>18 Years</b><br>• Maximum Age : <b>27 Years</b><br>• Age Relaxation Extra as per SSC CHSL 2026 Rules.",
-        totalPosts: "2,536 Posts"
-      },
-      bpsc_tre_2026: {
-        title: "BPSC Bihar School Teacher TRE 4.0 Recruitment Form 2026",
-        date: "Post Date: September 29, 2026 06:40 Pm",
-        intro: "<b>Bihar Public Service Commission (BPSC)</b> Has Invited Online Applications For <b>Primary, Middle, Secondary and Higher Secondary School Teacher (TRE 4.0)</b> For <b>33,520+ Vacancies</b> Across Bihar State.",
-        datesCol: "• Apply Start Date : <b>25 September 2026</b><br>• Apply Last Date : <b>20 October 2026</b><br>• Exam Date : <b>November 2026</b><br>• Admit Card : <b>November 2026</b>",
-        feeCol: "• General / OBC / Other State : <b>₹ 750/-</b><br>• SC / ST / PH (Bihar Domicile) : <b>₹ 200/-</b><br>• Female Candidates (Bihar Domicile) : <b>₹ 200/-</b>",
-        ageCol: "• Minimum Age : <b>18 Years (Primary) / 21 Years (TGT/PGT)</b><br>• Maximum Age : <b>37 Years (Male) / 40 Years (Female)</b>",
-        totalPosts: "33,520 Posts"
-      },
-      up_police_si: {
-        title: "UP Police Sub Inspector (SI) & Constable Recruitment 2026",
-        date: "Post Date: September 28, 2026 11:20 Am",
-        intro: "<b>Uttar Pradesh Police Recruitment and Promotion Board (UPPRPB)</b> Has Released The Notification For <b>Sub Inspector (Civil Police) & PAC Platoon Commander</b> Online Recruitment Form.",
-        datesCol: "• Apply Start Date : <b>10 October 2026</b><br>• Apply Last Date : <b>09 November 2026</b><br>• Exam Date : <b>January 2027</b>",
-        feeCol: "• General / OBC : <b>₹ 400/-</b><br>• SC / ST : <b>₹ 400/-</b><br>• All Female Candidates : <b>₹ 400/-</b>",
-        ageCol: "• Minimum Age : <b>21 Years</b><br>• Maximum Age : <b>28 Years</b><br>• Age Relaxation Extra as per UP Police Recruitment Rules.",
-        totalPosts: "3,820 Posts"
-      },
-      rrb_ntpc_2026: {
-        title: "Railway RRB NTPC Graduate Level Recruitment Online Form 2026",
-        date: "Post Date: September 25, 2026 04:10 Pm",
-        intro: "<b>Railway Recruitment Boards (RRB)</b> Invites Online Applications For <b>Non-Technical Popular Categories (NTPC) Graduate Posts</b> Across All Zonal Railways in India.",
-        datesCol: "• Apply Start Date : <b>14 September 2026</b><br>• Apply Last Date : <b>13 October 2026</b><br>• CBT 1 Exam Date : <b>December 2026</b>",
-        feeCol: "• General / OBC / EWS : <b>₹ 500/- (₹ 400 Refundable after CBT-1)</b><br>• SC / ST / Female / PwD : <b>₹ 250/- (Full Refundable after CBT-1)</b>",
-        ageCol: "• Minimum Age : <b>18 Years</b><br>• Maximum Age : <b>36 Years</b>",
-        totalPosts: "3,477 Posts"
-      },
-      ahc_ro_aro: {
-        title: "Allahabad High Court RO / ARO & Computer Assistant 2026",
-        date: "Post Date: September 24, 2026 02:00 Pm",
-        intro: "<b>High Court of Judicature at Allahabad</b> Has Released The Official Recruitment Notification For <b>Review Officer (RO) & Assistant Review Officer (ARO)</b> With Compulsory Computer Typing Test.",
-        datesCol: "• Apply Start Date : <b>20 September 2026</b><br>• Apply Last Date : <b>18 October 2026</b><br>• Exam Date : <b>November 2026</b>",
-        feeCol: "• General / OBC : <b>₹ 800/-</b><br>• SC / ST of UP : <b>₹ 600/-</b>",
-        ageCol: "• Minimum Age : <b>21 Years</b><br>• Maximum Age : <b>35 Years</b>",
-        totalPosts: "428 Posts"
-      },
-      upsssc_pet: {
-        title: "UPSSSC Preliminary Eligibility Test (PET 2026) Online Form",
-        date: "Post Date: September 20, 2026 09:30 Am",
-        intro: "<b>Uttar Pradesh Subordinate Services Selection Commission (UPSSSC)</b> Conducts <b>PET Examination</b> For Group C Recruitment in Uttar Pradesh.",
-        datesCol: "• Apply Start Date : <b>01 September 2026</b><br>• Apply Last Date : <b>30 September 2026</b><br>• Exam Date : <b>28-29 October 2026</b>",
-        feeCol: "• General / OBC : <b>₹ 185/-</b><br>• SC / ST : <b>₹ 95/-</b><br>• PH : <b>₹ 25/-</b>",
-        ageCol: "• Minimum Age : <b>18 Years</b><br>• Maximum Age : <b>40 Years</b>",
-        totalPosts: "Eligibility Test"
-      },
-      upsc_pre_2026: {
-        title: "UPSC Civil Services Prelims Exam Admit Card 2026",
-        date: "Post Date: September 15, 2026 12:00 Pm",
-        intro: "<b>Union Public Service Commission (UPSC)</b> Has Released The <b>E-Admit Card / Hall Ticket</b> For <b>Civil Services (Preliminary) Examination 2026</b>.",
-        datesCol: "• Admit Card Released : <b>Available Now</b><br>• Exam Date : <b>25 October 2026</b>",
-        feeCol: "• Nil (Admit Card Download Free)",
-        ageCol: "• Minimum Age : <b>21 Years</b><br>• Maximum Age : <b>32 Years</b>",
-        totalPosts: "1,056 Posts"
-      }
-    };
+    let database = { jobs: [], admit: [], results: [], answerkey: [] };
+
+    window.addEventListener('DOMContentLoaded', () => {
+      fetch('data.json')
+        .then(res => res.json())
+        .then(data => {
+          database = data;
+          populateSection('list_jobs', database.jobs, 'jobs');
+          populateSection('list_admit', database.admit, 'admit');
+          populateSection('list_results', database.results, 'results');
+          populateSection('list_answerkey', database.answerkey, 'answerkey');
+        })
+        .catch(() => {
+          console.warn('data.json not loaded yet.');
+        });
+    });
+
+    function populateSection(listId, items, catKey) {
+      const ul = document.getElementById(listId);
+      if (!ul || !items || items.length === 0) return;
+      ul.innerHTML = items.slice(0, 10).map((item, idx) => `
+        <li><a onclick="openDetail('${catKey}', ${idx})">${item.title}</a></li>
+      `).join('');
+    }
 
     function showHome() {
       document.getElementById('homeMainView').style.display = 'block';
@@ -774,19 +619,33 @@
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
-    function openDetailByKey(key) {
-      const data = examDataStore[key] || examDataStore.rrb_section_controller;
-      document.getElementById('pTitle').innerText = data.title;
-      document.getElementById('pDate').innerText = data.date;
-      document.getElementById('pIntro').innerHTML = data.intro;
-      document.getElementById('pDatesCol').innerHTML = data.datesCol;
-      document.getElementById('pFeeCol').innerHTML = data.feeCol;
-      document.getElementById('pAgeCol').innerHTML = data.ageCol;
-      document.getElementById('pTotalPostCol').innerText = data.totalPosts;
+    function openDetail(catKey, index) {
+      const list = database[catKey] || [];
+      const item = list[index];
+      if (!item) return;
+
+      document.getElementById('pTitle').innerText = item.title;
+      document.getElementById('pDate').innerText = item.date || 'Post Date: Active';
+      document.getElementById('pIntro').innerHTML = item.intro || item.title;
+      document.getElementById('pShortHead').innerHTML = `${item.title}<br><span style="color:#008000; font-size:12px;">Sarkari Alert AI : Short Details</span><br><span style="color:#000; font-size:11px;">SarkariAlert.AI</span>`;
+      document.getElementById('pDatesCol').innerHTML = item.dates || '• Dates : Check official notice';
+      document.getElementById('pFeeCol').innerHTML = item.fee || '• Fee : Check official notice';
+      document.getElementById('pAgeCol').innerHTML = item.age || '• Age criteria : As per rules';
+      document.getElementById('pTotalPostCol').innerText = item.total_posts || 'Open';
+
+      const links = item.links || {};
+      const directUrl = links.apply || links.notice || links.official || '#';
+      document.getElementById('pApplyLink').href = directUrl;
+      document.getElementById('pNoticeLink').href = links.notice || directUrl;
+      document.getElementById('pOfficialLink').href = links.official || directUrl;
 
       document.getElementById('homeMainView').style.display = 'none';
       document.getElementById('postDetailsView').style.display = 'block';
       window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function openFirstInCat(catKey) {
+      openDetail(catKey, 0);
     }
   </script>
 </body>
