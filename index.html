@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <title>SARKARI ALERT AI — Verified Govt Recruitment, Admit Cards & Results</title>
-  <meta name="description" content="AI-curated, cross-verified government job notifications, admit cards, exam results, and direct official board application links.">
+  <title>SARKARI ALERT AI — Verified Govt Recruitment, Admit Cards, Syllabus & Results</title>
+  <meta name="description" content="AI-curated government job notifications, admit cards, exam results, post-wise eligibility qualifications, and direct official syllabus downloads.">
 
   <!-- Privacy Analytics -->
   <script data-goatcounter="https://quicktools.goatcounter.com/count"
@@ -17,7 +17,6 @@
     :root {
       --bg-canvas: #f8fafc;
       --surface: #ffffff;
-      --surface-elevated: #ffffff;
       --brand-navy: #0f172a;
       --brand-slate: #1e293b;
       --brand-crimson: #e11d48;
@@ -27,21 +26,18 @@
       --brand-amber: #d97706;
       --text-main: #0f172a;
       --text-muted: #64748b;
-      --text-subtle: #94a3b8;
       --border-subtle: #e2e8f0;
-      --border-focus: #cbd5e1;
       --radius-sm: 6px;
       --radius-md: 10px;
       --radius-lg: 14px;
       --shadow-soft: 0 4px 6px -1px rgba(15, 23, 42, 0.05), 0 2px 4px -2px rgba(15, 23, 42, 0.03);
       --shadow-hover: 0 10px 15px -3px rgba(15, 23, 42, 0.08), 0 4px 6px -4px rgba(15, 23, 42, 0.04);
-      --shadow-modal: 0 25px 50px -12px rgba(15, 23, 42, 0.25);
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Inter", Helvetica, Arial, sans-serif; }
-    body { background-color: var(--bg-canvas); color: var(--text-main); line-height: 1.5; -webkit-font-smoothing: antialiased; }
+    body { background-color: var(--bg-canvas); color: var(--text-main); line-height: 1.5; }
 
-    /* NETWORK STATUS STRIP */
+    /* STATUS STRIP */
     .net-bar {
       background: var(--brand-navy);
       color: #94a3b8;
@@ -50,21 +46,19 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
       flex-wrap: wrap;
       gap: 6px;
     }
-    .net-bar a { color: #38bdf8; text-decoration: none; font-weight: 600; margin-left: 8px; transition: color 0.15s ease; }
+    .net-bar a { color: #38bdf8; text-decoration: none; font-weight: 600; margin-left: 8px; }
     .net-bar a:hover { color: #ffffff; }
 
-    /* EXECUTIVE BRAND HERO HEADER */
+    /* HERO BRAND HEADER */
     .brand-hero {
       background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #881337 100%);
       color: #ffffff;
-      padding: 28px 16px 24px;
+      padding: 26px 16px 22px;
       text-align: center;
       position: relative;
-      overflow: hidden;
     }
     .brand-hero::after {
       content: "";
@@ -73,39 +67,20 @@
       height: 3px;
       background: linear-gradient(90deg, #38bdf8, #e11d48, #f59e0b, #10b981);
     }
-    .hero-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      background: rgba(255, 255, 255, 0.12);
-      backdrop-filter: blur(8px);
-      padding: 4px 12px;
-      border-radius: 9999px;
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-      color: #38bdf8;
-      margin-bottom: 8px;
-      border: 1px solid rgba(255, 255, 255, 0.15);
-    }
     .brand-title {
-      font-size: clamp(2.1rem, 5.5vw, 3.2rem);
+      font-size: clamp(2rem, 5.5vw, 3.1rem);
       font-weight: 900;
       letter-spacing: -0.03em;
-      line-height: 1.15;
-      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
     }
     .brand-title span { color: #f43f5e; }
     .hero-tagline {
-      font-size: clamp(0.85rem, 2vw, 1.05rem);
+      font-size: clamp(0.85rem, 2vw, 1rem);
       color: #cbd5e1;
-      font-weight: 400;
       max-width: 680px;
-      margin: 6px auto 0;
+      margin: 4px auto 0;
     }
 
-    /* MODERN GLASS NAV BAR */
+    /* NAVIGATION */
     .site-nav {
       background: #ffffff;
       border-bottom: 1px solid var(--border-subtle);
@@ -130,15 +105,15 @@
       font-weight: 700;
       padding: 10px 14px;
       border-bottom: 2px solid transparent;
-      transition: all 0.15s ease;
       white-space: nowrap;
+      cursor: pointer;
     }
     .nav-inner a:hover {
       color: var(--brand-crimson);
       border-bottom-color: var(--brand-crimson);
     }
 
-    /* SEARCH & FILTER BAR */
+    /* SEARCH & FILTER */
     .search-strip {
       max-width: 1140px;
       margin: 16px auto 10px;
@@ -162,7 +137,6 @@
       font-size: 14px;
       color: var(--text-main);
       outline: none;
-      transition: all 0.2s ease;
       box-shadow: var(--shadow-soft);
     }
     .search-input:focus {
@@ -175,8 +149,7 @@
       top: 50%;
       transform: translateY(-50%);
       font-size: 15px;
-      color: var(--text-subtle);
-      pointer-events: none;
+      color: var(--text-muted);
     }
     .btn-channel {
       background: linear-gradient(135deg, #059669 0%, #047857 100%);
@@ -185,22 +158,12 @@
       font-weight: 700;
       padding: 11px 18px;
       border-radius: var(--radius-md);
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      box-shadow: 0 2px 4px rgba(5, 150, 105, 0.25);
       border: none;
       cursor: pointer;
       white-space: nowrap;
-      transition: transform 0.15s ease, box-shadow 0.15s ease;
-    }
-    .btn-channel:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 4px 8px rgba(5, 150, 105, 0.35);
     }
 
-    /* CURATED HIGHLIGHT TILES */
+    /* HIGHLIGHT TILES */
     .tiles-grid {
       max-width: 1140px;
       margin: 8px auto 14px;
@@ -215,7 +178,6 @@
       color: #ffffff;
       padding: 12px 10px;
       border-radius: var(--radius-md);
-      text-decoration: none;
       font-size: 12px;
       font-weight: 700;
       display: flex;
@@ -224,19 +186,15 @@
       text-align: center;
       cursor: pointer;
       box-shadow: var(--shadow-soft);
-      transition: transform 0.15s ease, box-shadow 0.15s ease;
-      line-height: 1.35;
+      transition: transform 0.15s ease;
     }
-    .tile-card:hover {
-      transform: translateY(-2px);
-      box-shadow: var(--shadow-hover);
-    }
+    .tile-card:hover { transform: translateY(-2px); }
     .tile-rose { background: linear-gradient(135deg, #e11d48, #be123c); }
     .tile-blue { background: linear-gradient(135deg, #2563eb, #1d4ed8); }
     .tile-emerald { background: linear-gradient(135deg, #059669, #047857); }
     .tile-amber { background: linear-gradient(135deg, #d97706, #b45309); }
 
-    /* MAIN TIERS CONTENT GRID */
+    /* TIERS CONTENT */
     .content-area {
       max-width: 1140px;
       margin: 0 auto;
@@ -260,13 +218,7 @@
       box-shadow: var(--shadow-soft);
       display: flex;
       flex-direction: column;
-      transition: border-color 0.2s ease, box-shadow 0.2s ease;
     }
-    .section-card:hover {
-      border-color: #cbd5e1;
-      box-shadow: var(--shadow-hover);
-    }
-
     .section-header {
       padding: 12px 14px;
       font-size: 14px;
@@ -275,7 +227,6 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      letter-spacing: 0.02em;
     }
     .hdr-results { background: linear-gradient(135deg, #059669, #047857); }
     .hdr-admit { background: linear-gradient(135deg, #2563eb, #1d4ed8); }
@@ -290,7 +241,6 @@
       padding: 2px 7px;
       border-radius: 9999px;
       font-weight: 700;
-      text-transform: uppercase;
     }
 
     .items-container {
@@ -301,23 +251,20 @@
     .item-entry {
       padding: 10px 14px;
       border-bottom: 1px solid var(--border-subtle);
-      transition: background 0.12s ease;
       cursor: pointer;
+      transition: background 0.12s ease;
     }
     .item-entry:last-child { border-bottom: none; }
     .item-entry:hover { background: #f8fafc; }
+    .item-entry:hover .item-link { color: var(--brand-crimson); }
 
     .item-link {
       font-size: 13px;
       font-weight: 600;
       color: #1e293b;
-      text-decoration: none;
       display: block;
       line-height: 1.45;
-      transition: color 0.15s ease;
     }
-    .item-entry:hover .item-link { color: var(--brand-crimson); }
-
     .item-meta-row {
       display: flex;
       justify-content: space-between;
@@ -335,7 +282,7 @@
       font-size: 10px;
     }
 
-    /* COMPANION UTILITIES ROW */
+    /* COMPANIONS BANNER */
     .utilities-banner {
       background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
       color: #ffffff;
@@ -343,16 +290,12 @@
       padding: 18px 20px;
       margin-bottom: 20px;
       border: 1px solid rgba(255, 255, 255, 0.08);
-      box-shadow: var(--shadow-soft);
     }
     .util-title {
       font-size: 15px;
       font-weight: 800;
       color: #38bdf8;
       margin-bottom: 12px;
-      display: flex;
-      align-items: center;
-      gap: 6px;
     }
     .util-grid {
       display: grid;
@@ -373,18 +316,12 @@
       display: flex;
       align-items: center;
       gap: 8px;
-      transition: all 0.15s ease;
     }
-    .util-pill:hover {
-      background: rgba(255, 255, 255, 0.14);
-      border-color: #38bdf8;
-      color: #ffffff;
-      transform: translateY(-1px);
-    }
+    .util-pill:hover { border-color: #38bdf8; color: #fff; }
 
-    /* ------------------------------------------------------------- */
-    /* PREMIUM EXAM DETAIL VIEW (SARKARI ALERT AI POST)               */
-    /* ------------------------------------------------------------- */
+    /* ------------------------------------------------------------------ */
+    /* POST DETAILS VIEW                                                  */
+    /* ------------------------------------------------------------------ */
     #postDetailsView {
       display: none;
       max-width: 980px;
@@ -402,16 +339,7 @@
       cursor: pointer;
       margin-bottom: 14px;
       border-radius: var(--radius-md);
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
       box-shadow: var(--shadow-soft);
-      transition: all 0.15s ease;
-    }
-    .btn-back:hover {
-      background: #f8fafc;
-      border-color: #cbd5e1;
-      color: #0f172a;
     }
 
     .detail-card-main {
@@ -421,7 +349,6 @@
       padding: 24px;
       box-shadow: var(--shadow-soft);
     }
-
     .detail-head-title {
       font-size: clamp(1.3rem, 3.5vw, 1.75rem);
       font-weight: 900;
@@ -445,7 +372,7 @@
       margin-bottom: 18px;
     }
 
-    /* DUAL PANE: DATES & FEE */
+    /* DATES & FEES */
     .dual-pane {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -474,7 +401,7 @@
       line-height: 1.65;
     }
 
-    /* AGE & VACANCY STRIP */
+    /* AGE & VACANCY */
     .age-posts-bar {
       display: flex;
       justify-content: space-between;
@@ -487,7 +414,6 @@
       flex-wrap: wrap;
       gap: 8px;
     }
-    .age-posts-bar strong { color: #1e3a8a; font-size: 13px; }
     .badge-vacancies {
       background: #2563eb;
       color: #ffffff;
@@ -497,20 +423,29 @@
       border-radius: 9999px;
     }
 
-    /* HOW TO APPLY */
-    .guide-box {
+    /* QUALIFICATIONS & BREAKDOWN */
+    .info-section-box {
       border: 1px solid var(--border-subtle);
       border-radius: var(--radius-md);
-      padding: 12px 14px;
-      font-size: 12.5px;
-      color: #334155;
-      line-height: 1.6;
-      margin-bottom: 18px;
+      padding: 14px;
+      margin-bottom: 16px;
       background: #ffffff;
     }
-    .guide-box strong { color: #0f172a; display: block; margin-bottom: 6px; }
+    .info-section-box strong {
+      display: block;
+      color: #0f172a;
+      font-size: 13px;
+      margin-bottom: 6px;
+      border-bottom: 1px solid #f1f5f9;
+      padding-bottom: 4px;
+    }
+    .info-section-box div {
+      font-size: 13px;
+      color: #334155;
+      line-height: 1.6;
+    }
 
-    /* ACTION LINKS TABLE */
+    /* ACTION TABLE */
     .action-table-wrap {
       border: 1.5px solid var(--border-subtle);
       border-radius: var(--radius-md);
@@ -535,36 +470,38 @@
     }
     .action-table tr:last-child td { border-bottom: none; }
     .action-table tr:nth-child(even) { background: #f8fafc; }
-    .btn-direct-link {
-      color: #2563eb;
+
+    .btn-act {
+      display: inline-block;
+      padding: 6px 12px;
+      border-radius: 6px;
       font-weight: 800;
       text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      gap: 4px;
-      transition: color 0.15s ease;
+      font-size: 12px;
     }
-    .btn-direct-link:hover { color: var(--brand-crimson); text-decoration: underline; }
+    .btn-act-pdf { background: #fee2e2; color: #b91c1c; }
+    .btn-act-pdf:hover { background: #fecaca; }
+    .btn-act-syllabus { background: #fef3c7; color: #b45309; }
+    .btn-act-syllabus:hover { background: #fde68a; }
+    .btn-act-apply { background: #dbeafe; color: #1d4ed8; }
+    .btn-act-apply:hover { background: #bfdbfe; }
+    .btn-act-web { color: #334155; font-weight: 700; text-decoration: underline; }
 
-    /* SITE FOOTER */
     .site-footer {
       background: #0f172a;
       color: #94a3b8;
-      border-top: 1px solid rgba(255, 255, 255, 0.08);
       padding: 24px 16px;
       text-align: center;
       font-size: 12px;
       margin-top: 40px;
     }
-    .site-footer strong { color: #f1f5f9; }
-    .site-footer p { max-width: 720px; margin: 6px auto 0; font-size: 11px; color: #64748b; line-height: 1.5; }
   </style>
 </head>
 <body>
 
   <!-- STATUS STRIP -->
   <div class="net-bar">
-    <div>⚡ Sarkari Alert AI • Verified Recruitment Ecosystem</div>
+    <div>⚡ Sarkari Alert AI • Verified Recruitment Portal</div>
     <div>
       <a href="https://unknownuniversem-blip.github.io/hindi-typing-tutor/">⌨ Hindi Typing</a>
       <a href="https://unknownuniversem-blip.github.io/typer-racer-world/">🏎️ NitroTypers</a>
@@ -575,15 +512,14 @@
 
   <!-- HERO BRAND HEADER -->
   <header class="brand-hero">
-    <div class="hero-badge">⚡ Autopilot Verification Engine</div>
     <h1 class="brand-title">SARKARI ALERT <span>AI</span></h1>
-    <p class="hero-tagline">Direct Government Job Vacancies, Hall Tickets, Exam Marks & Official Application Links</p>
+    <p class="hero-tagline">Real-Time Exam Notifications, Eligibility Criteria, Syllabus & Official Board Gateways</p>
   </header>
 
   <!-- NAVIGATION -->
   <nav class="site-nav">
     <div class="nav-inner">
-      <a href="#" onclick="showHome()">Home</a>
+      <a onclick="showHome()">Home</a>
       <a href="#secJobs" onclick="showHome()">Latest Jobs</a>
       <a href="#secAdmit" onclick="showHome()">Admit Cards</a>
       <a href="#secResults" onclick="showHome()">Results</a>
@@ -593,79 +529,69 @@
     </div>
   </nav>
 
-  <!-- HOMEPAGE MAIN VIEW -->
+  <!-- HOMEPAGE VIEW -->
   <div id="homeMainView">
-    <!-- SEARCH & CHANNELS -->
     <div class="search-strip">
       <div class="search-input-wrap">
         <span class="search-icon">🔍</span>
-        <input type="text" class="search-input" id="searchBox" placeholder="Type to filter by Post, Board, or Exam (e.g. SSC, RRB, UP Police, High Court)..." oninput="filterAll()">
+        <input type="text" class="search-input" id="searchBox" placeholder="Type to filter any job, syllabus, or exam (e.g. RRB NTPC, SSC CHSL, BPSC, High Court)..." oninput="filterAll()">
       </div>
-      <button type="button" class="btn-channel" onclick="alert('📢 Alerts Channel launching soon! Bookmark this site (Ctrl+D) for updates.')">
-        <span>🔔</span> Get Updates
+      <button type="button" class="btn-channel" onclick="alert('📢 Alerts channel launching soon! Bookmark this site (Ctrl+D) for daily updates.')">
+        🔔 Get Free Updates
       </button>
     </div>
 
-    <!-- CURATED HIGHLIGHT TILES -->
+    <!-- 4 TOP CARDS WITH DIRECT CLICK ROUTING -->
     <div class="tiles-grid">
-      <div class="tile-card tile-rose" onclick="openFirstInCat('jobs')">📢 Latest Govt Job Forms</div>
-      <div class="tile-card tile-blue" onclick="openFirstInCat('admit')">🎫 Hall Tickets & City Slips</div>
-      <div class="tile-card tile-emerald" onclick="openFirstInCat('results')">🏆 Exam Results & Cutoffs</div>
-      <div class="tile-card tile-amber" onclick="openFirstInCat('answerkey')">🔑 Official Answer Keys</div>
+      <div class="tile-card tile-rose" onclick="openBySlug('rrb-ntpc-2026')">📢 Railway RRB NTPC (5,165 Posts)</div>
+      <div class="tile-card tile-blue" onclick="openBySlug('ssc-chsl-2026')">📝 SSC CHSL 10+2 (3,712 Posts)</div>
+      <div class="tile-card tile-emerald" onclick="openBySlug('bpsc-tre-2026')">🏆 BPSC Teacher TRE (33,520 Posts)</div>
+      <div class="tile-card tile-amber" onclick="openBySlug('ahc-ro-aro-2026')">⚖️ Allahabad High Court RO/ARO</div>
     </div>
 
-    <!-- MAIN CONTENT TIERS -->
     <main class="content-area">
-      <!-- ROW 1: CORE TRIO -->
+      <!-- ROW 1 -->
       <div class="columns-row">
-        <!-- 1. RESULTS -->
+        <!-- RESULTS -->
         <div class="section-card" id="secResults">
           <div class="section-header hdr-results">
             <span>Declared Results</span>
             <span class="live-badge">Updated</span>
           </div>
-          <ul class="items-container" id="list_results">
-            <li class="item-entry"><span class="item-link">Loading verified results...</span></li>
-          </ul>
+          <ul class="items-container" id="list_results"></ul>
         </div>
 
-        <!-- 2. ADMIT CARDS -->
+        <!-- ADMIT CARDS -->
         <div class="section-card" id="secAdmit">
           <div class="section-header hdr-admit">
             <span>Admit Cards & Slips</span>
             <span class="live-badge">Live</span>
           </div>
-          <ul class="items-container" id="list_admit">
-            <li class="item-entry"><span class="item-link">Loading verified admit cards...</span></li>
-          </ul>
+          <ul class="items-container" id="list_admit"></ul>
         </div>
 
-        <!-- 3. LATEST JOBS -->
+        <!-- LATEST JOBS -->
         <div class="section-card" id="secJobs">
           <div class="section-header hdr-jobs">
             <span>Latest Vacancies</span>
             <span class="live-badge">Active</span>
           </div>
-          <ul class="items-container" id="list_jobs">
-            <li class="item-entry"><span class="item-link">Loading verified jobs...</span></li>
-          </ul>
+          <ul class="items-container" id="list_jobs"></ul>
         </div>
       </div>
 
-      <!-- ROW 2: SECONDARY TRIO -->
+      <!-- ROW 2 -->
       <div class="columns-row">
-        <!-- 4. ANSWER KEY -->
+        <!-- ANSWER KEYS -->
         <div class="section-card" id="secAnswer">
           <div class="section-header hdr-answer">
-            <span>Answer Keys & Challenges</span>
+            <span>Answer Keys & Solutions</span>
             <span class="live-badge">Keys</span>
           </div>
-          <ul class="items-container" id="list_answerkey">
-            <li class="item-entry"><span class="item-link">Loading answer keys...</span></li>
-          </ul>
+          <ul class="items-container" id="list_answerkey"></ul>
         </div>
 
-        <!-- 5. DOCUMENTS -->
+        <!-- CERTIFICATES -->
         <div class="section-card" id="secDocuments">
           <div class="section-header hdr-docs">
             <span>Certificates & Verification</span>
@@ -677,21 +603,17 @@
               <div class="item-meta-row"><span class="tag-badge">e-District</span><span>Direct</span></div>
             </li>
             <li class="item-entry" onclick="window.open('https://uidai.gov.in', '_blank')">
-              <span class="item-link">Aadhaar Card: Check Status, Download e-Aadhaar & PVC</span>
+              <span class="item-link">Aadhaar Card: Check Status, Download e-Aadhaar & PVC Order</span>
               <div class="item-meta-row"><span class="tag-badge">UIDAI</span><span>Official</span></div>
             </li>
             <li class="item-entry" onclick="window.open('https://incometax.gov.in', '_blank')">
               <span class="item-link">PAN Card: Instant e-PAN Online & Aadhaar Linking</span>
               <div class="item-meta-row"><span class="tag-badge">IT Dept</span><span>Free</span></div>
             </li>
-            <li class="item-entry" onclick="window.open('https://voters.eci.gov.in', '_blank')">
-              <span class="item-link">Voter ID Card Online Registration & EPIC Download</span>
-              <div class="item-meta-row"><span class="tag-badge">ECI</span><span>Portal</span></div>
-            </li>
           </ul>
         </div>
 
-        <!-- 6. ADMISSIONS -->
+        <!-- ADMISSIONS -->
         <div class="section-card" id="secAdmission">
           <div class="section-header hdr-admission">
             <span>Admissions & Counseling</span>
@@ -706,20 +628,16 @@
               <span class="item-link">CUET UG Central University Admission Registration</span>
               <div class="item-meta-row"><span class="tag-badge">NTA</span><span>Portal</span></div>
             </li>
-            <li class="item-entry" onclick="window.open('https://jeecup.admissions.nic.in', '_blank')">
-              <span class="item-link">UP Polytechnic JEECUP Entrance Form & Schedule</span>
-              <div class="item-meta-row"><span class="tag-badge">JEECUP</span><span>Official</span></div>
-            </li>
           </ul>
         </div>
       </div>
 
-      <!-- CANDIDATE TOOL UTILITIES BANNER -->
+      <!-- COMPANIONS -->
       <div class="utilities-banner">
         <div class="util-title">🛠️ Essential Exam Tools for Form Applicants</div>
         <div class="util-grid">
           <a href="https://unknownuniversem-blip.github.io/exam-resizer/" class="util-pill" target="_blank">
-            <span>📷</span><span>Photo Resizer (20KB-50KB)</span>
+            <span>📷</span><span>Photo Resizer (20KB - 50KB)</span>
           </a>
           <a href="https://unknownuniversem-blip.github.io/signature-maker-studio/" class="util-pill" target="_blank">
             <span>✍️</span><span>Signature Maker Studio</span>
@@ -728,14 +646,14 @@
             <span>⌨️</span><span>Mangal / Krutidev Typing</span>
           </a>
           <a href="https://unknownuniversem-blip.github.io/typer-racer-world/" class="util-pill" target="_blank">
-            <span>🏎️</span><span>NitroTypers Speed Test</span>
+            <span>🏎️</span><span>NitroTypers English Test</span>
           </a>
         </div>
       </div>
     </main>
   </div>
 
-  <!-- POST DETAILS VIEW -->
+  <!-- COMPLETE DETAIL VIEW (DATES, QUALIFICATION, VACANCY & SYLLABUS) -->
   <div id="postDetailsView">
     <button type="button" class="btn-back" onclick="showHome()">← Back to Sarkari Alert AI Home</button>
 
@@ -745,66 +663,62 @@
 
       <div class="detail-intro-box" id="pIntro">Notice summary.</div>
 
-      <!-- DATES & FEES DUAL PANE -->
+      <!-- DATES & FEES -->
       <div class="dual-pane">
         <div class="pane-box">
-          <div class="pane-title">📅 Important Dates</div>
-          <div class="pane-body" id="pDatesCol">• Application Dates : Active</div>
+          <div class="pane-title">📅 Important Dates (महत्वपूर्ण तिथियां)</div>
+          <div class="pane-body" id="pDatesCol"></div>
         </div>
         <div class="pane-box">
-          <div class="pane-title">💳 Application Fee</div>
-          <div class="pane-body" id="pFeeCol">• Fee : Check official notice</div>
+          <div class="pane-title">💳 Application Fee (आवेदन शुल्क)</div>
+          <div class="pane-body" id="pFeeCol"></div>
         </div>
       </div>
 
-      <!-- AGE & VACANCY -->
+      <!-- AGE & VACANCIES -->
       <div class="age-posts-bar">
-        <div><strong>🎂 Age Eligibility:</strong> <span id="pAgeCol">Check official notification for criteria.</span></div>
-        <div>Total Vacancies: <span class="badge-vacancies" id="pTotalPostCol">Open</span></div>
+        <div><strong>🎂 Age Limit Criteria:</strong> <span id="pAgeCol"></span></div>
+        <div>Total Vacancy: <span class="badge-vacancies" id="pTotalPostCol"></span></div>
       </div>
 
-      <!-- HOW TO APPLY -->
-      <div class="guide-box">
-        <strong>📋 How to Apply & Verify Notice:</strong>
-        • Click the direct official link in the table below to access the board portal.<br>
-        • Download the official notification PDF and verify eligibility parameters.<br>
-        • Complete online registration/login and submit before the designated closing date.
+      <!-- ELIGIBILITY QUALIFICATION -->
+      <div class="info-section-box">
+        <strong>🎓 Educational Qualification & Eligibility Criteria (पात्रता):</strong>
+        <div id="pQualification"></div>
       </div>
 
-      <!-- DIRECT ACTION LINKS TABLE WITH STRICT LINK SEPARATION -->
+      <!-- VACANCY BREAKDOWN -->
+      <div class="info-section-box" id="secVacBreakdown">
+        <strong>📋 Post-Wise Vacancy Distribution:</strong>
+        <div id="pVacDetails"></div>
+      </div>
+
+      <!-- ACTION LINKS TABLE -->
       <div class="action-table-wrap">
         <table class="action-table">
           <tr>
-            <th style="width:60%;">Document / Official Resource</th>
-            <th style="width:40%; text-align:center;">Action / Verified Destination</th>
+            <th style="width:55%;">Official Document / Gateway</th>
+            <th style="width:45%; text-align:center;">Action / Verified Destination</th>
           </tr>
           <tr>
-            <td><b>📄 Download Official Notification (PDF / Notice)</b></td>
-            <td style="text-align:center;">
-              <a id="pNoticeLink" href="#" target="_blank" rel="noopener noreferrer" class="btn-direct-link" style="background:#fee2e2; color:#b91c1c; padding:4px 10px; border-radius:4px; font-weight:800;">
-                📥 Download Notification PDF
-              </a>
-            </td>
+            <td><b>🔗 Apply Online / Candidate Registration</b></td>
+            <td style="text-align:center;"><a id="pApplyLink" href="#" target="_blank" rel="noopener noreferrer" class="btn-act btn-act-apply">Apply Online ➔</a></td>
           </tr>
           <tr>
-            <td><b>🔗 Online Registration & Apply Portal</b></td>
-            <td style="text-align:center;">
-              <a id="pApplyLink" href="#" target="_blank" rel="noopener noreferrer" class="btn-direct-link" style="background:#dbeafe; color:#1d4ed8; padding:4px 10px; border-radius:4px; font-weight:800;">
-                Apply Online ➔
-              </a>
-            </td>
+            <td><b>📥 Download Official Notification PDF</b></td>
+            <td style="text-align:center;"><a id="pNoticeLink" href="#" target="_blank" rel="noopener noreferrer" class="btn-act btn-act-pdf">Download Notice PDF</a></td>
           </tr>
           <tr>
-            <td><b>🏛️ Official Recruitment Board Authority Website</b></td>
-            <td style="text-align:center;">
-              <a id="pOfficialLink" href="#" target="_blank" rel="noopener noreferrer" class="btn-direct-link">
-                Visit Official Site ➔
-              </a>
-            </td>
+            <td><b>📖 Download Syllabus & Exam Pattern PDF</b></td>
+            <td style="text-align:center;"><a id="pSyllabusLink" href="#" target="_blank" rel="noopener noreferrer" class="btn-act btn-act-syllabus">Download Syllabus PDF</a></td>
+          </tr>
+          <tr>
+            <td><b>🏛️ Official Conducting Board Authority</b></td>
+            <td style="text-align:center;"><a id="pOfficialLink" href="#" target="_blank" rel="noopener noreferrer" class="btn-act-web">Visit Official Board Site ➔</a></td>
           </tr>
           <tr style="background:#f0fdf4;">
             <td>📷 <b>Need Photo / Signature Resizer (20KB - 50KB)?</b></td>
-            <td style="text-align:center;"><a href="https://unknownuniversem-blip.github.io/exam-resizer/" target="_blank" class="btn-direct-link" style="color:#059669; font-weight:800;">Resize Photo Free ➔</a></td>
+            <td style="text-align:center;"><a href="https://unknownuniversem-blip.github.io/exam-resizer/" target="_blank" style="color:#059669; font-weight:800; text-decoration:none;">Resize Photo Free ➔</a></td>
           </tr>
         </table>
       </div>
@@ -813,7 +727,7 @@
 
   <footer class="site-footer">
     <div><strong>Sarkari Alert AI™</strong> — Autonomous Government Recruitment Engine</div>
-    <p>All notices, dates, and links are parsed directly from official government gazettes and recruitment boards without intermediate affiliate redirection.</p>
+    <p>All notices, dates, qualifications, and syllabus links are parsed from official government boards without intermediate affiliate redirects.</p>
   </footer>
 
   <script>
@@ -844,12 +758,12 @@
         return;
       }
 
-      ul.innerHTML = filtered.slice(0, 10).map((item, idx) => `
+      ul.innerHTML = filtered.map((item, idx) => `
         <li class="item-entry" onclick="openDetail('${catKey}', ${idx})">
           <span class="item-link">${item.title}</span>
           <div class="item-meta-row">
             <span class="tag-badge">${item.org || 'Govt'}</span>
-            <span>${item.date || 'Active'}</span>
+            <span>${item.date ? item.date.replace('Post Date: ', '') : 'Active'}</span>
           </div>
         </li>
       `).join('');
@@ -883,16 +797,27 @@
       document.getElementById('pIntro').innerHTML = item.intro || item.title;
       document.getElementById('pDatesCol').innerHTML = item.dates || '• Dates : Check official notice';
       document.getElementById('pFeeCol').innerHTML = item.fee || '• Fee : Check official notice';
-      document.getElementById('pAgeCol').innerHTML = item.age || 'Check official notification for criteria.';
+      document.getElementById('pAgeCol').innerHTML = item.age || 'Check notification for details';
       document.getElementById('pTotalPostCol').innerText = item.total_posts || 'Open';
+      document.getElementById('pQualification').innerHTML = item.qualification || 'Candidate must possess the required educational qualification from a recognized board/university in India as outlined in the notification.';
+      
+      const vacEl = document.getElementById('pVacDetails');
+      if (item.vacancies_detail) {
+        document.getElementById('secVacBreakdown').style.display = 'block';
+        vacEl.innerHTML = item.vacancies_detail;
+      } else {
+        document.getElementById('secVacBreakdown').style.display = 'none';
+      }
 
       const links = item.links || {};
-      const directApply = links.apply || '#';
+      const directApply = links.apply || links.official || '#';
       const directNotice = links.notice || directApply;
+      const directSyllabus = links.syllabus || directNotice;
       const directOfficial = links.official || directApply;
 
       document.getElementById('pApplyLink').href = directApply;
       document.getElementById('pNoticeLink').href = directNotice;
+      document.getElementById('pSyllabusLink').href = directSyllabus;
       document.getElementById('pOfficialLink').href = directOfficial;
 
       document.getElementById('homeMainView').style.display = 'none';
@@ -900,8 +825,16 @@
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
-    function openFirstInCat(catKey) {
-      openDetail(catKey, 0);
+    // Opens a post by unique slug from any banner or external card
+    function openBySlug(slug) {
+      for (const cat in database) {
+        const idx = database[cat].findIndex(x => x.id === slug);
+        if (idx !== -1) {
+          openDetail(cat, idx);
+          return;
+        }
+      }
+      openDetail('jobs', 0);
     }
   </script>
 </body>
