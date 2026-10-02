@@ -1,68 +1,41 @@
 {
   "jobs": [
-    {
-      "title": "SSC CGL Recruitment 2026 - Online Form for 14,500+ Posts",
-      "org": "SSC",
-      "date": "Oct 2026",
-      "link": "https://ssc.gov.in"
-    },
-    {
-      "title": "Allahabad High Court RO / ARO & Computer Assistant Notification",
-      "org": "AHC",
-      "date": "Oct 2026",
-      "link": "https://allahabadhighcourt.in"
-    },
-    {
-      "title": "UP Police Sub Inspector SI & Constable 2026 Online Application",
-      "org": "UPPRPB",
-      "date": "Oct 2026",
-      "link": "https://uppbpb.gov.in"
-    },
-    {
-      "title": "Railway RRB NTPC Graduate Level Vacancy Form",
-      "org": "RRB",
-      "date": "Sep 2026",
-      "link": "https://rrbapply.gov.in"
-    }
+    { "title": "SSC CGL Recruitment 2026 - Online Form for 14,500+ Posts", "org": "SSC", "date": "Oct 2026", "link": "https://ssc.gov.in" },
+    { "title": "Allahabad High Court RO / ARO & Computer Assistant 2026", "org": "AHC", "date": "Oct 2026", "link": "https://allahabadhighcourt.in" },
+    { "title": "UP Police Sub Inspector SI & Constable Online Form", "org": "UPPRPB", "date": "Oct 2026", "link": "https://uppbpb.gov.in" },
+    { "title": "Railway RRB NTPC Graduate Level Vacancy 2026", "org": "RRB", "date": "Sep 2026", "link": "https://rrbapply.gov.in" },
+    { "title": "IBPS PO / Specialist Officer SO Recruitment 2026", "org": "IBPS", "date": "Sep 2026", "link": "https://ibps.in" }
   ],
   "admit": [
-    {
-      "title": "SSC CHSL Tier II Typing & Skill Test Admit Card 2026",
-      "org": "SSC",
-      "date": "Oct 2026",
-      "link": "https://ssc.gov.in"
-    },
-    {
-      "title": "UPSC Civil Services Prelims 2026 Hall Ticket Download",
-      "org": "UPSC",
-      "date": "Oct 2026",
-      "link": "https://upsc.gov.in"
-    },
-    {
-      "title": "UPSSSC Lekhpal Examination Admit Card",
-      "org": "UPSSSC",
-      "date": "Oct 2026",
-      "link": "https://upsssc.gov.in"
-    }
+    { "title": "SSC CHSL Tier II Typing & Skill Test Admit Card 2026", "org": "SSC", "date": "Oct 2026", "link": "https://ssc.gov.in" },
+    { "title": "UPSC Civil Services Prelims Hall Ticket Download", "org": "UPSC", "date": "Oct 2026", "link": "https://upsc.gov.in" },
+    { "title": "UPSSSC Lekhpal Examination Call Letter 2026", "org": "UPSSSC", "date": "Oct 2026", "link": "https://upsssc.gov.in" },
+    { "title": "NTA UGC NET December Exam City Slip 2026", "org": "NTA", "date": "Oct 2026", "link": "https://ugcnet.nta.ac.in" }
   ],
   "results": [
-    {
-      "title": "SSC CGL Final Marks & Cutoff List 2026 Declared",
-      "org": "SSC",
-      "date": "Oct 2026",
-      "link": "https://ssc.gov.in"
-    },
-    {
-      "title": "UP Police Constable Written Exam Result & Merit PDF",
-      "org": "UPPRPB",
-      "date": "Oct 2026",
-      "link": "https://uppbpb.gov.in"
-    },
-    {
-      "title": "IBPS PO / Clerk Mains Exam Result 2026",
-      "org": "IBPS",
-      "date": "Oct 2026",
-      "link": "https://ibps.in"
-    }
+    { "title": "SSC CGL Final Marks & Cutoff List 2026 Declared", "org": "SSC", "date": "Oct 2026", "link": "https://ssc.gov.in" },
+    { "title": "UP Police Constable Written Exam Result & Merit PDF", "org": "UPPRPB", "date": "Oct 2026", "link": "https://uppbpb.gov.in" },
+    { "title": "IBPS Clerk Mains Exam Scorecard 2026", "org": "IBPS", "date": "Oct 2026", "link": "https://ibps.in" },
+    { "title": "Bihar BPSC Teacher TRE 4.0 Final Result & District Allocation", "org": "BPSC", "date": "Sep 2026", "link": "https://bpsc.bih.nic.in" }
+  ],
+  "answerkey": [
+    { "title": "SSC CPO Sub Inspector Paper I Provisional Answer Key", "org": "SSC", "date": "Oct 2026", "link": "https://ssc.gov.in" },
+    { "title": "UP Police SI Exam Question Paper & Key Challenge", "org": "UPPRPB", "date": "Oct 2026", "link": "https://uppbpb.gov.in" },
+    { "title": "Railway RRB Technician Grade I & III Answer Key", "org": "RRB", "date": "Sep 2026", "link": "https://rrbapply.gov.in" }
+  ],
+  "syllabus": [
+    { "title": "Allahabad High Court RO/ARO New Exam Pattern & Steno Criteria", "org": "AHC", "date": "2026", "link": "https://allahabadhighcourt.in" },
+    { "title": "SSC CGL Tier 1 & Tier 2 Detailed Syllabus & Negative Marking", "org": "SSC", "date": "2026", "link": "https://ssc.gov.in" },
+    { "title": "UP Police Computer Operator & Clerk Typing Syllabus 2026", "org": "UPPRPB", "date": "2026", "link": "https://uppbpb.gov.in" }
+  ],
+  "admission": [
+    { "title": "NTA NEET UG 2026 Online Application & Information Bulletin", "org": "NTA", "date": "2026", "link": "https://neet.nta.nic.in" },
+    { "title": "CUET UG / PG Central University Admission Registration", "org": "NTA", "date": "2026", "link": "https://cuet.nta.nic.in" },
+    { "title": "UP B.Ed Joint Entrance Examination JEE Counseling Schedule", "org": "BU", "date": "2026", "link": "https://bujhansi.ac.in" }
+  ],
+  "certificate": [
+    { "title": "UP E-Sathi: Online Domicile (निवास), Caste (जाति) & Income (आय)", "org": "UP Govt", "date": "Direct", "link": "https://edistrict.up.gov.in" },
+    { "title": "Aadhaar Card: Check Status, Download e-Aadhaar & PVC Order", "org": "UIDAI", "date": "Direct", "link": "https://uidai.gov.in" },
+    { "title": "PAN Card Online: Instant e-PAN via Aadhaar Number (Free)", "org": "IT Dept", "date": "Direct", "link": "https://incometax.gov.in" }
   ]
 }
