@@ -542,12 +542,26 @@
       </button>
     </div>
 
-    <!-- 4 TOP CARDS WITH DIRECT CLICK ROUTING -->
+    <!-- TOP HIGHLIGHT TILES -->
     <div class="tiles-grid">
       <div class="tile-card tile-rose" onclick="openBySlug('rrb-ntpc-2026')">📢 Railway RRB NTPC (5,165 Posts)</div>
       <div class="tile-card tile-blue" onclick="openBySlug('ssc-chsl-2026')">📝 SSC CHSL 10+2 (3,712 Posts)</div>
-      <div class="tile-card tile-emerald" onclick="openBySlug('bpsc-tre-2026')">🏆 BPSC Teacher TRE (33,520 Posts)</div>
-      <div class="tile-card tile-amber" onclick="openBySlug('ahc-ro-aro-2026')">⚖️ Allahabad High Court RO/ARO</div>
+      <div class="tile-card tile-emerald" onclick="openBySlug('ibps-po-2026')">🏦 IBPS PO / Clerk (14,700+ Posts)</div>
+      <div class="tile-card tile-amber" onclick="openBySlug('bpsc-tre-2026')">🏆 BPSC Teacher TRE (33,520 Posts)</div>
+    </div>
+
+    <!-- PAN-INDIA SECTOR QUICK FILTER BAR -->
+    <div style="max-width:1140px; margin:0 auto 12px; padding:0 12px; display:flex; gap:6px; overflow-x:auto; padding-bottom:4px;">
+      <button onclick="filterByOrg('')" style="background:#0f172a; color:#fff; border:none; padding:6px 12px; border-radius:9999px; font-size:11.5px; font-weight:700; cursor:pointer; white-space:nowrap;">🌟 All Portals</button>
+      <button onclick="filterByOrg('SSC')" style="background:#fff; border:1px solid #cbd5e1; padding:6px 12px; border-radius:9999px; font-size:11.5px; font-weight:700; cursor:pointer; white-space:nowrap;">🏛️ SSC Central</button>
+      <button onclick="filterByOrg('Railway')" style="background:#fff; border:1px solid #cbd5e1; padding:6px 12px; border-radius:9999px; font-size:11.5px; font-weight:700; cursor:pointer; white-space:nowrap;">🚆 Railway RRB</button>
+      <button onclick="filterByOrg('Banking')" style="background:#fff; border:1px solid #cbd5e1; padding:6px 12px; border-radius:9999px; font-size:11.5px; font-weight:700; cursor:pointer; white-space:nowrap;">🏦 Banking (IBPS/SBI)</button>
+      <button onclick="filterByOrg('UPSC')" style="background:#fff; border:1px solid #cbd5e1; padding:6px 12px; border-radius:9999px; font-size:11.5px; font-weight:700; cursor:pointer; white-space:nowrap;">🇮🇳 UPSC (IAS/CDS/NDA)</button>
+      <button onclick="filterByOrg('Police')" style="background:#fff; border:1px solid #cbd5e1; padding:6px 12px; border-radius:9999px; font-size:11.5px; font-weight:700; cursor:pointer; white-space:nowrap;">👮 State Police</button>
+      <button onclick="filterByOrg('High Court')" style="background:#fff; border:1px solid #cbd5e1; padding:6px 12px; border-radius:9999px; font-size:11.5px; font-weight:700; cursor:pointer; white-space:nowrap;">⚖️ High Courts</button>
+      <button onclick="filterByOrg('Teacher')" style="background:#fff; border:1px solid #cbd5e1; padding:6px 12px; border-radius:9999px; font-size:11.5px; font-weight:700; cursor:pointer; white-space:nowrap;">📚 Teaching (CTET/BPSC)</button>
+      <button onclick="filterByOrg('Army')" style="background:#fff; border:1px solid #cbd5e1; padding:6px 12px; border-radius:9999px; font-size:11.5px; font-weight:700; cursor:pointer; white-space:nowrap;">🎖️ Defense & Agniveer</button>
+      <button onclick="filterByOrg('Universities')" style="background:#fff; border:1px solid #cbd5e1; padding:6px 12px; border-radius:9999px; font-size:11.5px; font-weight:700; cursor:pointer; white-space:nowrap;">🎓 Universities (CUET/DU)</button>
     </div>
 
     <main class="content-area">
